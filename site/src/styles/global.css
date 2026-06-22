@@ -1,0 +1,42 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Page-level dotted-grid background: a full-width band anchored to the top of
+   the document that fades out toward the bottom via a gradient mask. Positioned
+   absolute (not fixed) so it scrolls away with the top section rather than
+   staying pinned to the viewport. z-index:-1 keeps it behind all content;
+   pointer-events:none so it never intercepts clicks. */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Span the full first screen; stay solid near the top, then fade out
+     gradually so the grid is fully gone by the bottom of the first viewport
+     (the 30% → 100% stretch of 100vh fades it off the first screen). */
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, var(--dot-color) var(--dot-radius), transparent var(--dot-radius)),
+    radial-gradient(circle, var(--dot-color) var(--dot-radius), transparent var(--dot-radius));
+  background-size:
+    var(--dot-gap) var(--grid-cell),
+    var(--grid-cell) var(--dot-gap);
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
+}
+h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space); }
+.toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: var(--gray-50); color: var(--gray-900); font-family: var(--font-mono); font-size: 0.85rem; padding: 0.6rem 1.1rem; border-radius: 8px; z-index: 100; }
+section { scroll-margin-top: 5rem; }

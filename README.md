@@ -18,4 +18,4 @@ The WDL specification is made available to you under the permissive [BSD
 
 © 2019-Present The OpenWDL Developers
 
-[brand guidelines]: ./Guidelines.pdf
+[brand guidelines]: ./brand-guidelines.pdf
