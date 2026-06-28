@@ -43,5 +43,10 @@ export type { CodeProps } from "./components/Code";
 export { CodeBlock } from "./components/CodeBlock";
 export type { CodeBlockProps } from "./components/CodeBlock";
 
+export { Nav } from "./components/Nav";
+export type { NavProps, NavLink } from "./components/Nav";
+export { Footer } from "./components/Footer";
+export type { FooterProps } from "./components/Footer";
+
 export { copyText } from "./lib/clipboard";
 export { highlightToHtml } from "./lib/highlight";
