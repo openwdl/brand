@@ -1,5 +1,5 @@
+import { SiGithub } from "react-icons/si";
 import { repoUrl } from "../data/brand";
-import { GitHubIcon } from "../components/GitHubIcon";
 import styles from "./Footer.module.css";
 
 /**
@@ -26,7 +26,7 @@ export function Footer() {
         .
       </p>
       <a className={styles.repo} href={repoUrl}>
-        <GitHubIcon />
+        <SiGithub size={16} aria-hidden />
         openwdl/brand
       </a>
     </footer>

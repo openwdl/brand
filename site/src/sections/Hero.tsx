@@ -1,5 +1,5 @@
+import { SiGithub } from "react-icons/si";
 import { mission, repoUrl, logoAssets } from "../data/brand";
-import { GitHubIcon } from "../components/GitHubIcon";
 import styles from "./Hero.module.css";
 
 /**
@@ -34,7 +34,7 @@ export function Hero() {
             Download logos
           </a>
           <a className={styles.secondary} href={repoUrl}>
-            <GitHubIcon />
+            <SiGithub size={16} aria-hidden />
             View on GitHub
           </a>
         </div>
