@@ -1,5 +1,6 @@
 .footer { border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 4rem; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
 .footer a { color: var(--text-muted); }
+.footer p { margin: 0; }
 .repo { display: inline-flex; align-items: center; gap: 0.4rem; }
 .repo:hover { color: var(--accent); }
 .license { text-decoration: underline; }

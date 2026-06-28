@@ -7,12 +7,15 @@ import styles from "./Footer.module.css";
  *
  * Contains a brief copyright / license notice and a link back to the
  * canonical brand repository on GitHub. Laid out as a flex row on wider
- * viewports and stacked on mobile.
+ * viewports and stacked on mobile. The copyright line sits above the
+ * license notice.
  */
 export function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
+        © 2019 to Present The OpenWDL Developers.
+        <br />
         Made available under the{" "}
         <a
           className={styles.license}
@@ -20,7 +23,7 @@ export function Footer() {
         >
           Creative Commons Attribution 4.0 International License
         </a>
-        . © 2019 to Present The OpenWDL Developers.
+        .
       </p>
       <a className={styles.repo} href={repoUrl}>
         <GitHubIcon />
