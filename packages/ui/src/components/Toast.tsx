@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import styles from "./Toast.module.css";
 
 /** Trigger function that shows a transient toast message. */
@@ -32,6 +32,9 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     setMessage(msg);
     timerRef.current = setTimeout(() => setMessage(null), 2000);
   }, []);
+
+  // Clear any pending dismiss timer if the provider unmounts mid-toast.
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
   return (
     <ToastContext.Provider value={toast}>

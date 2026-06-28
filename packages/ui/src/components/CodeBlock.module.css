@@ -32,6 +32,12 @@
   border-color: var(--accent);
 }
 
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .code {
   margin: 0;
   padding: 1rem;

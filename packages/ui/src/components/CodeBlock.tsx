@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { highlightToHtml } from "../lib/highlight";
 import styles from "./CodeBlock.module.css";
 
@@ -20,6 +20,7 @@ export interface CodeBlockProps {
 export function CodeBlock({ code, lang = "text", filename }: CodeBlockProps) {
   const [html, setHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,11 +32,15 @@ export function CodeBlock({ code, lang = "text", filename }: CodeBlockProps) {
     };
   }, [code, lang]);
 
+  // Clear the copy-feedback timer if the block unmounts before it fires.
+  useEffect(() => () => { if (copyTimer.current) clearTimeout(copyTimer.current); }, []);
+
   const onCopy = async () => {
     try {
       await navigator.clipboard.writeText(code);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 1500);
     } catch {
       /* ignore clipboard errors */
     }
