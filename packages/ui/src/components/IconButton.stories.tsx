@@ -1,32 +1,37 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { FiSearch, FiCopy, FiDownload, FiSettings, FiTrash2 } from "react-icons/fi";
+import { SiGithub } from "react-icons/si";
 import { IconButton } from "./IconButton";
-
-/** A simple inline glyph standing in for a real icon in stories. */
-const Glyph = () => (
-  <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
-    <path d="M8 3.5a.5.5 0 0 1 .5.5v3.5H12a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5Z" />
-  </svg>
-);
 
 const meta: Meta<typeof IconButton> = {
   title: "Components/IconButton",
   component: IconButton,
-  args: { label: "Add", children: <Glyph /> },
 };
 export default meta;
 
 type Story = StoryObj<typeof IconButton>;
 
-/** Default medium icon button. */
-export const Default: Story = {};
+/** A row of icon buttons for common actions. */
+export const Gallery: Story = {
+  render: () => (
+    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+      <IconButton label="Search"><FiSearch /></IconButton>
+      <IconButton label="Copy"><FiCopy /></IconButton>
+      <IconButton label="Download"><FiDownload /></IconButton>
+      <IconButton label="Settings"><FiSettings /></IconButton>
+      <IconButton label="Delete"><FiTrash2 /></IconButton>
+      <IconButton label="View on GitHub"><SiGithub /></IconButton>
+    </div>
+  ),
+};
 
-/** All three sizes side by side. */
+/** The same icon across all three sizes (icons scale with the button). */
 export const Sizes: Story = {
-  render: (args) => (
+  render: () => (
     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-      <IconButton {...args} size="sm" />
-      <IconButton {...args} size="md" />
-      <IconButton {...args} size="lg" />
+      <IconButton label="Settings" size="sm"><FiSettings /></IconButton>
+      <IconButton label="Settings" size="md"><FiSettings /></IconButton>
+      <IconButton label="Settings" size="lg"><FiSettings /></IconButton>
     </div>
   ),
 };
