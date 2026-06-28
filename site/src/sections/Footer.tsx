@@ -13,8 +13,14 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
-        Made available under the BSD 3-Clause License. © 2019 to Present The
-        OpenWDL Developers.
+        Made available under the{" "}
+        <a
+          className={styles.license}
+          href="https://creativecommons.org/licenses/by/4.0/"
+        >
+          Creative Commons Attribution 4.0 International License
+        </a>
+        . © 2019 to Present The OpenWDL Developers.
       </p>
       <a className={styles.repo} href={repoUrl}>
         <GitHubIcon />

@@ -2,4 +2,6 @@
 .footer a { color: var(--text-muted); }
 .repo { display: inline-flex; align-items: center; gap: 0.4rem; }
 .repo:hover { color: var(--accent); }
+.license { text-decoration: underline; }
+.license:hover { color: var(--accent); }
 @media (max-width: 768px) { .footer { flex-direction: column; gap: 1rem; } }
