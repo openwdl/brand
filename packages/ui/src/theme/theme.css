@@ -1,0 +1,46 @@
+/* Primitive scales and layout tokens — theme-independent. */
+:root {
+  /* Teal */
+  --teal-900: #205b69; --teal-800: #29778a; --teal-700: #3599b2;
+  --teal-600: #44c5e4; --teal-500: #4bd8fa; --teal-400: #6fe0fb;
+  --teal-300: #86e5fc; --teal-200: #acedfd; --teal-100: #c7f3fd; --teal-50: #edfbff;
+  /* Cool Gray */
+  --gray-900: #0a0c12; --gray-800: #0d0f16; --gray-700: #10131c;
+  --gray-600: #171b26; --gray-500: #242833; --gray-400: #3a3f4a;
+  --gray-300: #696e7a; --gray-200: #9497a1; --gray-100: #c7c8cb; --gray-50: #e8e8e9;
+  /* Fonts */
+  --font-sans: "Public Sans", system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+  /* Radii */
+  --radius-sm: 6px; --radius: 8px; --radius-lg: 14px;
+  /* Layout */
+  --maxw: 1200px; --content-w: 820px; --sidebar-w: 260px; --toc-w: 200px;
+  --nav-h: 53px; --space: 1.5rem;
+  /* Z-index */
+  --z-nav: 10; --z-overlay: 1000; --z-toast: 1100;
+}
+
+/* Dark is the default theme (applies with no data-theme attribute). */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--gray-900);
+  --surface: var(--gray-800);
+  --border: var(--gray-600);
+  --text: var(--gray-50);
+  --text-muted: var(--gray-300);
+  --accent: var(--teal-500);
+  --accent-contrast: var(--gray-900);
+}
+
+/* Light theme — net-new palette derived from the primitive scales. */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: var(--gray-50);
+  --border: var(--gray-100);
+  --text: var(--gray-900);
+  --text-muted: var(--gray-300);
+  --accent: var(--teal-700);
+  --accent-contrast: #ffffff;
+}
