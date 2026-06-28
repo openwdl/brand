@@ -1,0 +1,46 @@
+{
+  "name": "@openwdl/ui",
+  "version": "0.0.1",
+  "description": "OpenWDL shared React design system and component library.",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./theme.css": "./dist/theme.css",
+    "./base.css": "./dist/base.css",
+    "./fonts.css": "./dist/fonts.css"
+  },
+  "scripts": {
+    "build": "tsup && node scripts/copy-css.mjs",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^10.5.0",
+    "eslint-plugin-jsdoc": "^63.0.7",
+    "globals": "^17.6.0",
+    "jsdom": "^25.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^2.0.5"
+  }
+}
