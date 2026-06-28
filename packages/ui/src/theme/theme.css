@@ -31,6 +31,10 @@
   --text-muted: var(--gray-300);
   --accent: var(--teal-500);
   --accent-contrast: var(--gray-900);
+  --info: var(--teal-400);
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
 }
 
 /* Light theme — net-new palette derived from the primitive scales. */
@@ -43,4 +47,8 @@
   --text-muted: var(--gray-300);
   --accent: var(--teal-700);
   --accent-contrast: #ffffff;
+  --info: var(--teal-700);
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
 }
