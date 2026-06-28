@@ -11,7 +11,6 @@ const Glyph = () => (
 const meta: Meta<typeof IconButton> = {
   title: "Components/IconButton",
   component: IconButton,
-  tags: ["autodocs"],
   args: { label: "Add", children: <Glyph /> },
 };
 export default meta;

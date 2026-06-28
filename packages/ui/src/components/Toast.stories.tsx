@@ -11,7 +11,6 @@ function Demo() {
 const meta: Meta<typeof Demo> = {
   title: "Feedback/Toast",
   component: Demo,
-  tags: ["autodocs"],
   decorators: [(Story) => <ToastProvider><Story /></ToastProvider>],
 };
 export default meta;

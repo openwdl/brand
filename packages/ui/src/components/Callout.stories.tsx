@@ -4,7 +4,6 @@ import { Callout } from "./Callout";
 const meta: Meta<typeof Callout> = {
   title: "Feedback/Callout",
   component: Callout,
-  tags: ["autodocs"],
   args: { children: "WDL workflows are portable across execution engines." },
 };
 export default meta;

@@ -5,7 +5,7 @@ const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-themes"],
-  docs: { autodocs: "tag" },
+  docs: { autodocs: false },
   // Honor a base path when building for GitHub Pages (set by CI in Task 4).
   viteFinal: async (cfg) =>
     process.env.STORYBOOK_BASE

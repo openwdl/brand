@@ -5,7 +5,6 @@ import { CopyButton } from "./CopyButton";
 const meta: Meta<typeof CopyButton> = {
   title: "Feedback/CopyButton",
   component: CopyButton,
-  tags: ["autodocs"],
   args: { value: "task hello { command { echo hi } }", label: "WDL" },
   decorators: [(Story) => <ToastProvider><Story /></ToastProvider>],
 };

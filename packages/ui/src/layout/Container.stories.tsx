@@ -4,7 +4,6 @@ import { Container } from "./Container";
 const meta: Meta<typeof Container> = {
   title: "Layout/Container",
   component: Container,
-  tags: ["autodocs"],
 };
 export default meta;
 

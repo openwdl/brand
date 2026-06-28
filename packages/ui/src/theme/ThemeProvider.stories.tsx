@@ -24,7 +24,6 @@ function ThemeDemo() {
 const meta: Meta<typeof ThemeDemo> = {
   title: "Foundations/ThemeProvider",
   component: ThemeDemo,
-  tags: ["autodocs"],
   // Disable the global addon-themes toolbar toggle for this story: the in-story
   // ThemeProvider owns `data-theme` here, so the two must not fight over it.
   parameters: { themes: { disable: true } },

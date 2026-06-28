@@ -9,7 +9,6 @@ const Box = ({ children }: { children: ReactNode }) => (
 const meta: Meta<typeof Row> = {
   title: "Layout/Row",
   component: Row,
-  tags: ["autodocs"],
 };
 export default meta;
 

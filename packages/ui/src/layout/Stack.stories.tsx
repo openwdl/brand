@@ -9,7 +9,6 @@ const Box = ({ children }: { children: ReactNode }) => (
 const meta: Meta<typeof Stack> = {
   title: "Layout/Stack",
   component: Stack,
-  tags: ["autodocs"],
 };
 export default meta;
 

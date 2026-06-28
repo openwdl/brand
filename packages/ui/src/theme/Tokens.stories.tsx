@@ -56,7 +56,6 @@ function Foundations() {
 const meta: Meta<typeof Foundations> = {
   title: "Foundations/Tokens",
   component: Foundations,
-  tags: ["autodocs"],
 };
 export default meta;
 

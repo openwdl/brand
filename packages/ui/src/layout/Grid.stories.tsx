@@ -9,7 +9,6 @@ const Box = ({ children }: { children: ReactNode }) => (
 const meta: Meta<typeof Grid> = {
   title: "Layout/Grid",
   component: Grid,
-  tags: ["autodocs"],
   args: { columns: 3, gap: "1rem" },
 };
 export default meta;

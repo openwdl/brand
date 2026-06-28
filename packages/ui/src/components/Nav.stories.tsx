@@ -4,7 +4,6 @@ import { Nav } from "./Nav";
 const meta: Meta<typeof Nav> = {
   title: "Chrome/Nav",
   component: Nav,
-  tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
 };
 export default meta;

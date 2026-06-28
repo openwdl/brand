@@ -4,7 +4,6 @@ import { Section } from "./Section";
 const meta: Meta<typeof Section> = {
   title: "Layout/Section",
   component: Section,
-  tags: ["autodocs"],
 };
 export default meta;
 

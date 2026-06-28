@@ -4,7 +4,6 @@ import { DownloadButton } from "./DownloadButton";
 const meta: Meta<typeof DownloadButton> = {
   title: "Feedback/DownloadButton",
   component: DownloadButton,
-  tags: ["autodocs"],
   args: { href: "#", filename: "openwdl-logo.svg", children: "Download SVG" },
 };
 export default meta;

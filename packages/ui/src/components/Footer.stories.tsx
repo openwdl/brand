@@ -5,7 +5,6 @@ import { Link } from "./Link";
 const meta: Meta<typeof Footer> = {
   title: "Chrome/Footer",
   component: Footer,
-  tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
 };
 export default meta;
