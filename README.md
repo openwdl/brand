@@ -20,5 +20,6 @@ This work is licensed under a
 
 © 2019-Present The OpenWDL Developers
 
+[brand guidelines]: ./brand-guidelines.pdf
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
