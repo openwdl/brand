@@ -1,12 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-
-/** Read a file relative to this test module as UTF-8 text. */
-const read = (rel: string) =>
-  readFileSync(fileURLToPath(new URL(rel, import.meta.url)), "utf8");
-
-const html = read("../index.html");
+// Import the static SEO files as raw text via Vite's `?raw` loader so the test
+// stays free of Node built-ins (keeps it type-checkable under `tsc -b`).
+import html from "../index.html?raw";
+import sitemap from "../public/sitemap.xml?raw";
+import robots from "../public/robots.txt?raw";
 
 describe("SEO metadata in index.html", () => {
   it("has a substantive meta description", () => {
@@ -49,5 +46,18 @@ describe("SEO metadata in index.html", () => {
     expect(data["@type"]).toBe("Organization");
     expect(data.url).toBe("https://openwdl.github.io/brand/");
     expect(data.sameAs).toContain("https://github.com/openwdl/brand");
+  });
+});
+
+describe("crawl files in public/", () => {
+  it("sitemap lists the canonical URL", () => {
+    expect(sitemap).toContain("<loc>https://openwdl.github.io/brand/</loc>");
+  });
+
+  it("robots.txt allows crawling and points at the sitemap", () => {
+    expect(robots).toMatch(/User-agent: \*/);
+    expect(robots).toContain(
+      "Sitemap: https://openwdl.github.io/brand/sitemap.xml",
+    );
   });
 });
