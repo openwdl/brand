@@ -4,7 +4,54 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/brand/assets/favicon/icon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenWDL Brand Guidelines</title>
+
+    <title>OpenWDL Brand Guidelines — Logos, Colors & Typography</title>
+    <meta
+      name="description"
+      content="Official brand guidelines for OpenWDL and the Workflow Description Language (WDL): logos, color palettes, typography, layout grid, and downloadable assets."
+    />
+    <link rel="canonical" href="https://openwdl.github.io/brand/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0c12" />
+
+    <!-- Open Graph (Facebook, LinkedIn, Slack, etc.). Absolute URLs are
+         required by crawlers, so they hard-code the canonical origin. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OpenWDL" />
+    <meta property="og:title" content="OpenWDL Brand Guidelines" />
+    <meta
+      property="og:description"
+      content="Logos, color palettes, typography, layout grid, and downloadable assets for OpenWDL and the Workflow Description Language (WDL)."
+    />
+    <meta property="og:url" content="https://openwdl.github.io/brand/" />
+    <meta property="og:image" content="https://openwdl.github.io/brand/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="OpenWDL logo on a dark background" />
+
+    <!-- Twitter / X large-image card. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OpenWDL Brand Guidelines" />
+    <meta
+      name="twitter:description"
+      content="Logos, color palettes, typography, layout grid, and downloadable assets for OpenWDL and the Workflow Description Language (WDL)."
+    />
+    <meta name="twitter:image" content="https://openwdl.github.io/brand/og-image.png" />
+
+    <!-- Structured data: identifies the organization to search engines. The
+         logo points at a real square logo PNG (copied into public/assets at
+         build time), not the wide social card. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "OpenWDL",
+        "url": "https://openwdl.github.io/brand/",
+        "logo": "https://openwdl.github.io/brand/assets/png/icon@4x.png",
+        "sameAs": ["https://github.com/openwdl/brand"]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

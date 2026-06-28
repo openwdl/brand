@@ -1,0 +1,8 @@
+# NOTE: On a GitHub Pages project page this file is served at
+# /brand/robots.txt, which crawlers do NOT honor — they only read the host-root
+# /robots.txt. Crawl control today is via <meta name="robots"> in index.html.
+# This file is kept for completeness and becomes authoritative if the site ever
+# moves to a custom-domain root.
+User-agent: *
+Allow: /
+Sitemap: https://openwdl.github.io/brand/sitemap.xml
