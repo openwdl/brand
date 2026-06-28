@@ -1,0 +1,57 @@
+.wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.copy {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+}
+
+.copy:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.code {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.code :global(.shiki) {
+  margin: 0;
+  background: transparent !important;
+}
+
+/* Dual-theme shiki: pick the CSS-variable color for the active theme. */
+:global(html[data-theme="dark"]) .code :global(.shiki),
+:global(html[data-theme="dark"]) .code :global(.shiki span) {
+  color: var(--shiki-dark) !important;
+}
+
+:global(html[data-theme="light"]) .code :global(.shiki),
+:global(html[data-theme="light"]) .code :global(.shiki span) {
+  color: var(--shiki-light) !important;
+}

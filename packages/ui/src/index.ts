@@ -36,4 +36,12 @@ export type { BadgeProps, BadgeVariant } from "./components/Badge";
 export { Callout } from "./components/Callout";
 export type { CalloutProps, CalloutVariant } from "./components/Callout";
 
+export { Card } from "./components/Card";
+export type { CardProps } from "./components/Card";
+export { Code } from "./components/Code";
+export type { CodeProps } from "./components/Code";
+export { CodeBlock } from "./components/CodeBlock";
+export type { CodeBlockProps } from "./components/CodeBlock";
+
 export { copyText } from "./lib/clipboard";
+export { highlightToHtml } from "./lib/highlight";
