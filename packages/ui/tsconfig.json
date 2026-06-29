@@ -10,6 +10,7 @@
     "noUnusedParameters": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "declaration": true,
     "noEmit": true,

@@ -51,13 +51,14 @@
   background: transparent !important;
 }
 
-/* Dual-theme shiki: pick the CSS-variable color for the active theme. */
-:global(html[data-theme="dark"]) .code :global(.shiki),
-:global(html[data-theme="dark"]) .code :global(.shiki span) {
-  color: var(--shiki-dark) !important;
+/* Dual-theme shiki (defaultColor: false emits --shiki-light/--shiki-dark vars).
+   Default to the dark colors; switch to light when the light theme is active. */
+.code :global(.shiki),
+.code :global(.shiki span) {
+  color: var(--shiki-dark);
 }
 
 :global(html[data-theme="light"]) .code :global(.shiki),
 :global(html[data-theme="light"]) .code :global(.shiki span) {
-  color: var(--shiki-light) !important;
+  color: var(--shiki-light);
 }

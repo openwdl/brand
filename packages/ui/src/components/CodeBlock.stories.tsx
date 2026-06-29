@@ -21,7 +21,7 @@ export const Json: Story = {
   },
 };
 
-/** A WDL snippet (renders as plain monospace until a WDL grammar is added). */
+/** A WDL snippet, highlighted via the bundled WDL TextMate grammar. */
 export const Wdl: Story = {
   args: {
     lang: "wdl",
