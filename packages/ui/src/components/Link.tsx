@@ -10,10 +10,32 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
 }
 
+/** Small up-right arrow shown after external links. Decorative (`aria-hidden`). */
+function ExternalIcon() {
+  return (
+    <svg
+      className={styles.icon}
+      width="0.85em"
+      height="0.85em"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
+
 /**
  * A themed anchor. External links (explicit `external` or an `http(s)` href)
- * open in a new tab with `rel="noopener noreferrer"`. Explicit `target`/`rel`
- * props always win.
+ * open in a new tab with `rel="noopener noreferrer"` and show a small up-right
+ * arrow. Explicit `target`/`rel` props always win.
  */
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   { external, href, className, children, target, rel, ...rest },
@@ -30,6 +52,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
       {...rest}
     >
       {children}
+      {isExternal && <ExternalIcon />}
     </a>
   );
 });

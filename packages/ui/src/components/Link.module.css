@@ -6,3 +6,10 @@
 .link:hover {
   text-decoration: underline;
 }
+
+.icon {
+  display: inline-block;
+  margin-left: 0.15em;
+  vertical-align: -0.08em;
+}
+

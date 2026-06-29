@@ -23,4 +23,11 @@ describe("Link", () => {
     render(<Link href="/x" external>X</Link>);
     expect(screen.getByRole("link")).toHaveAttribute("target", "_blank");
   });
+
+  it("shows an arrow icon for external links but not internal ones", () => {
+    const { container, rerender } = render(<Link href="https://example.com">Ext</Link>);
+    expect(container.querySelector("svg")).toBeInTheDocument();
+    rerender(<Link href="/docs">Docs</Link>);
+    expect(container.querySelector("svg")).not.toBeInTheDocument();
+  });
 });
