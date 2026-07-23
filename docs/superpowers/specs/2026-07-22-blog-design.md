@@ -14,6 +14,16 @@ Teal identifies the current release, links, focus states, and small structural l
 
 The canonical `OpenWDLNav` marks `Blog` as the current destination. The canonical community banner and footer close both the homepage and article pages.
 
+## Application Architecture
+
+The blog lives in the existing `site/` workspace beside the brand-guidelines page. It uses the workspace's React, TypeScript, Vite, Vitest, CSS Modules, and `@openwdl/ui` stack rather than the legacy Jekyll application.
+
+The client application routes `/` to the current brand guidelines, `/blog/` to the Ledger, and `/blog/<slug>/` to an article. The build emits static entry files for the Ledger and every article so direct requests and browser refreshes work on static hosting.
+
+The Vite base path is configurable. The current GitHub Pages preview uses `/brand/`; the openwdl.org production build uses `/`. Application links, generated route files, assets, canonical URLs, and redirects derive from the same configured base.
+
+The ten existing posts become versioned Markdown files under `site/src/content/blog/`. Canonical article URLs use `/blog/<slug>/`. A root production build emits redirects from the existing `/wdl/bioinformatics/workflows/<slug>/` URLs; a `/brand/` preview build can demonstrate those redirects only beneath its preview base and does not claim to intercept the currently deployed root URLs.
+
 ## Homepage Structure
 
 The homepage contains four zones:
