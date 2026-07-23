@@ -17,10 +17,14 @@ describe("ColorPalette", () => {
         <ColorPalette />
       </ToastProvider>,
     );
-    const swatches = screen.getAllByRole("button", { name: /copy #/i });
+    const swatches = screen.getAllByRole("button", {
+      name: /copy (teal|cool gray) \d+ #[0-9a-f]{6}/i,
+    });
     expect(swatches).toHaveLength(20);
 
-    await userEvent.click(screen.getByRole("button", { name: "Copy #4BD8FA" }));
+    await userEvent.click(screen.getByRole("button", {
+      name: "Copy Teal 500 #4BD8FA",
+    }));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith("#4BD8FA");
     expect(await screen.findByText("Copied #4BD8FA")).toBeInTheDocument();
   });

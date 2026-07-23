@@ -1,24 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Nav } from "./Nav";
+import { OpenWDLNav } from "./OpenWDLNav";
 
-const meta: Meta<typeof Nav> = {
+const meta: Meta<typeof OpenWDLNav> = {
   title: "Chrome/Nav",
-  component: Nav,
+  component: OpenWDLNav,
   parameters: { layout: "fullscreen" },
 };
 export default meta;
 
-type Story = StoryObj<typeof Nav>;
+type Story = StoryObj<typeof OpenWDLNav>;
 
-/** A header with a wordmark and section links. */
+/** Canonical global navbar shared by OpenWDL sites. */
 export const Default: Story = {
   args: {
     logo: <strong style={{ color: "var(--accent)" }}>OpenWDL</strong>,
-    logoHref: "#",
-    links: [
-      { href: "#docs", label: "Docs" },
-      { href: "#spec", label: "Spec" },
-      { href: "#community", label: "Community" },
-    ],
   },
 };

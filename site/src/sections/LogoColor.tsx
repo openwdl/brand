@@ -1,5 +1,6 @@
 import { logoVariants } from "../data/brand";
 import { LogoPreview } from "../components/LogoPreview";
+import { ChapterHeader } from "../components/ChapterHeader";
 import styles from "./LogoColor.module.css";
 
 /**
@@ -17,14 +18,20 @@ import styles from "./LogoColor.module.css";
  */
 export function LogoColor(): JSX.Element {
   return (
-    <section id="logo-color" className={styles.section}>
-      <h2>Logo Color</h2>
-      <p className={styles.lead}>
-        The OpenWDL logo should only be used in the approved color variations
-        below. Recoloring or modifying the logo is not allowed.
-      </p>
+    <section id="using-the-mark" className={styles.section}>
+      <ChapterHeader
+        number="03"
+        label="Using the mark"
+        title="Choose an approved treatment for the background."
+      >
+        <p>
+          Use teal-and-white or teal-and-black when color is available. Use the
+          single-color treatments for monochrome production or when the
+          surrounding palette cannot support teal. Do not recolor, distort,
+          rearrange, or redraw the artwork.
+        </p>
+      </ChapterHeader>
 
-      {/* Grid of the four canonical variants sourced from `logoVariants`. */}
       <div className={styles.grid}>
         {logoVariants.map((v) => {
           // Light-text variants (Teal + Black, All Black) need a light swatch background
@@ -46,9 +53,14 @@ export function LogoColor(): JSX.Element {
         })}
       </div>
 
-      <h3>Live Preview</h3>
-      {/* LogoPreview lets users interactively test variant recommendations. */}
-      <LogoPreview />
+      <div className={styles.tester}>
+        <h3>Check a real surface</h3>
+        <p>
+          Pick any background or use a common preset. The preview recommends
+          the approved treatment with the clearest wordmark contrast.
+        </p>
+        <LogoPreview />
+      </div>
     </section>
   );
 }

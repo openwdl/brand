@@ -1,10 +1,20 @@
 .section { padding: 4rem 0; }
-.lead { color: var(--text-muted); max-width: 60ch; }
-.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-.card { border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; background: var(--surface); }
-/* Heading is the card's first child; drop its default top margin so it isn't
-   pushed down on top of the card padding. */
+.cards { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: 1rem; margin-left: 4.5rem; }
+.card { min-width: 0; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; background: var(--surface); }
 .card h3 { margin-top: 0; }
-.preview { display: flex; justify-content: center; align-items: center; min-height: 160px; }
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  border-radius: 10px;
+  background-image:
+    linear-gradient(var(--gray-600) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gray-600) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
 .note { color: var(--text-muted); font-size: 0.9rem; }
-@media (max-width: 768px) { .cards { grid-template-columns: 1fr; } }
+.preview img { max-width: 100%; height: auto; }
+.uses { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; padding: 0; list-style: none; }
+.uses li { padding: 0.3rem 0.55rem; border: 1px solid var(--teal-800); border-radius: 999px; color: var(--teal-300); font-family: var(--font-mono); font-size: 0.7rem; }
+@media (max-width: 768px) { .cards { grid-template-columns: 1fr; margin-left: 0; } }

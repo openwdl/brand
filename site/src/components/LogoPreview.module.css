@@ -4,4 +4,7 @@
 .label { display: flex; flex-direction: column; gap: 0.5rem; }
 .presets { display: flex; gap: 0.5rem; }
 .presets button { font-family: var(--font-mono); background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.8rem; cursor: pointer; }
-@media (max-width: 768px) { .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .wrap { grid-template-columns: 1fr; }
+  .presets button { min-height: 44px; }
+}

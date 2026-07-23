@@ -45,6 +45,8 @@ export type { CodeBlockProps } from "./components/CodeBlock";
 
 export { Nav } from "./components/Nav";
 export type { NavProps, NavLink } from "./components/Nav";
+export { OpenWDLNav } from "./components/OpenWDLNav";
+export type { OpenWDLNavProps, OpenWDLNavActive } from "./components/OpenWDLNav";
 export { Footer } from "./components/Footer";
 export type {
   FooterProps,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { logoAssets } from "../data/brand";
 import { buildAssetZip } from "../lib/zip";
 import { DownloadButton } from "@openwdl/ui";
+import { ChapterHeader } from "../components/ChapterHeader";
 import styles from "./Downloads.module.css";
 
 /**
@@ -68,38 +69,67 @@ export function Downloads(): JSX.Element {
 
   return (
     <section id="downloads" className={styles.section}>
-      <h2>Downloads</h2>
-      <p className={styles.lead}>
-        Download individual logo assets or grab everything as a zip.
-      </p>
+      <ChapterHeader
+        number="07"
+        label="Downloads"
+        title="Use the source assets."
+      >
+        <p>
+          Download the complete package or select an individual logo form and
+          color treatment. Every asset is available as a scalable SVG and a
+          high-resolution PNG.
+        </p>
+      </ChapterHeader>
 
-      {/* One-click zip download for the full asset pack. */}
-      <button type="button" className={styles.all} onClick={downloadAll} disabled={busy}>
-        {busy ? "Preparing…" : "Download all (zip)"}
-      </button>
+      <div className={styles.content}>
+        <div className={styles.toolbar}>
+          <span>
+            {logoAssets.length} asset sets · {logoAssets.length * 2} individual files
+          </span>
+          <button type="button" className={styles.all} onClick={downloadAll} disabled={busy}>
+            {busy ? "Preparing…" : "Download all assets (.zip)"}
+          </button>
+        </div>
 
-      {/* Per-asset cards rendered from logoAssets. */}
-      <div className={styles.grid}>
-        {logoAssets.map((a) => {
-          // Black logos disappear on a dark swatch, so preview them on a light
-          // background; all other variants sit on the dark swatch.
-          const onLight = a.name.includes("Black");
-          return (
-          <div key={a.name} className={styles.card}>
-            <div
-              className={styles.preview}
-              style={{ background: onLight ? "var(--gray-50)" : "var(--gray-800)" }}
-            >
-              <img src={a.svg} alt={a.name} height={40} />
+        <div className={styles.grid}>
+          {logoAssets.map((a) => {
+            const onLight = a.name.includes("Black");
+            return (
+            <div key={a.name} className={styles.card}>
+              <div
+                className={styles.preview}
+                style={{ background: onLight ? "var(--gray-50)" : "var(--gray-800)" }}
+              >
+                <img src={a.svg} alt={a.name} height={40} />
+              </div>
+              <span className={styles.name}>{a.name}</span>
+              <div className={styles.actions}>
+                <DownloadButton href={a.svg} filename={basename(a.svg)}>SVG</DownloadButton>
+                <DownloadButton href={a.png} filename={basename(a.png)}>PNG</DownloadButton>
+              </div>
             </div>
-            <span className={styles.name}>{a.name}</span>
-            <div className={styles.actions}>
-              <DownloadButton href={a.svg} filename={basename(a.svg)}>SVG</DownloadButton>
-              <DownloadButton href={a.png} filename={basename(a.png)}>PNG</DownloadButton>
-            </div>
+            );
+          })}
+        </div>
+
+        <div className={styles.guidance}>
+          <div>
+            <h3>Choose SVG for production</h3>
+            <p>Use the vector source for websites, documentation, presentations, and print.</p>
           </div>
-          );
-        })}
+          <div>
+            <h3>Choose PNG for compatibility</h3>
+            <p>Use the high-resolution raster where the destination cannot accept vector artwork.</p>
+          </div>
+        </div>
+
+        <a
+          className={styles.pdf}
+          href={`${import.meta.env.BASE_URL}brand-guidelines.pdf`}
+          download
+        >
+          Download archived PDF
+        </a>
       </div>
     </section>
   );

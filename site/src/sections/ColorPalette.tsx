@@ -10,28 +10,36 @@ import styles from "./ColorPalette.module.css";
  */
 export function ColorPalette() {
   return (
-    <section id="colors" className={styles.section}>
-      <h2>Color Palette</h2>
-      <p className={styles.lead}>
-        Two primary color families: Teal and Cool Gray, each offering a range of
-        shades for different applications. Click any swatch to copy its hex.
-      </p>
-
-      {/* Primary brand color, 10 stops from 900 (dark) to 50 (near-white). */}
-      <h3>Teal <span className={styles.tag}>Primary Brand Color</span></h3>
+    <div className={styles.section}>
+      <div className={styles.subhead}>
+        <h3>Teal <span className={styles.tag}>Primary brand color</span></h3>
+        <span>Click any swatch to copy its hex value</span>
+      </div>
       <div className={styles.grid}>
         {tealScale.map((c) => (
-          <ColorSwatch key={`teal-${c.shade}`} shade={c.shade} hex={c.hex} />
+          <ColorSwatch
+            key={`teal-${c.shade}`}
+            family="Teal"
+            shade={c.shade}
+            hex={c.hex}
+          />
         ))}
       </div>
 
-      {/* Neutral palette, 10 stops used for backgrounds, borders, and UI chrome. */}
-      <h3>Cool Gray <span className={styles.tag}>Supporting Neutral Palette</span></h3>
+      <div className={styles.subhead}>
+        <h3>Cool Gray <span className={styles.tag}>Supporting neutral palette</span></h3>
+        <span>Click any swatch to copy its hex value</span>
+      </div>
       <div className={styles.grid}>
         {coolGrayScale.map((c) => (
-          <ColorSwatch key={`gray-${c.shade}`} shade={c.shade} hex={c.hex} />
+          <ColorSwatch
+            key={`gray-${c.shade}`}
+            family="Cool Gray"
+            shade={c.shade}
+            hex={c.hex}
+          />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

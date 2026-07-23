@@ -7,17 +7,25 @@ import styles from "./ColorSwatch.module.css";
  * Clicking the button copies the hex string to the clipboard and fires a brief toast
  * notification so the user has visual confirmation the copy succeeded.
  *
- * @param shade - The numeric shade weight (e.g. 900, 500, 50) labelling this stop on the scale.
- * @param hex   - The hex color string (e.g. "#4BD8FA") to display and copy on click.
+ * @param family - Palette family containing the shade.
+ * @param shade  - Numeric shade weight labelling this stop on the scale.
+ * @param hex    - Hex color string to display and copy.
  */
-export function ColorSwatch({ shade, hex }: { shade: number; hex: string }) {
+export function ColorSwatch({
+  family,
+  shade,
+  hex,
+}: {
+  family: "Teal" | "Cool Gray";
+  shade: number;
+  hex: string;
+}) {
   const toast = useToast();
   return (
     <button
       type="button"
       className={styles.swatch}
-      // aria-label drives both accessibility and the test query `{ name: "Copy #…" }`.
-      aria-label={`Copy ${hex}`}
+      aria-label={`Copy ${family} ${shade} ${hex}`}
       onClick={async () => {
         // Write to clipboard first; only confirm when the write resolves. If the
         // Clipboard API is unavailable or denied, tell the user instead of failing
