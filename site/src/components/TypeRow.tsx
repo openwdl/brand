@@ -1,6 +1,6 @@
 import type { TypeToken } from "../data/brand";
 import { typeTokenToCss } from "../lib/typeToken";
-import { CopyButton } from "./CopyButton";
+import { CopyButton } from "@openwdl/ui";
 import styles from "./TypeRow.module.css";
 
 /**

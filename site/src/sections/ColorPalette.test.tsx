@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { ToastProvider } from "../components/ToastProvider";
+import { ToastProvider } from "@openwdl/ui";
 import { ColorPalette } from "./ColorPalette";
 
 describe("ColorPalette", () => {

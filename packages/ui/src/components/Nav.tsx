@@ -32,17 +32,19 @@ export function Nav({ logo, logoHref = "#", links = [], sticky = true, className
       className={[styles.nav, sticky ? styles.sticky : "", className].filter(Boolean).join(" ")}
       {...props}
     >
-      {logo && (
-        <a href={logoHref} className={styles.brand}>
-          {logo}
-        </a>
-      )}
-      <nav className={styles.links}>
-        {links.map((l) => (
-          <a key={l.href} href={l.href}>{l.label}</a>
-        ))}
-        {children}
-      </nav>
+      <div className={styles.inner}>
+        {logo && (
+          <a href={logoHref} className={styles.brand}>
+            {logo}
+          </a>
+        )}
+        <nav className={styles.links}>
+          {links.map((l) => (
+            <a key={l.href} href={l.href}>{l.label}</a>
+          ))}
+          {children}
+        </nav>
+      </div>
     </header>
   );
 }

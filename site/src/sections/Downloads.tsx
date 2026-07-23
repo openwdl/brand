@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { logoAssets } from "../data/brand";
 import { buildAssetZip } from "../lib/zip";
-import { DownloadButton } from "../components/DownloadButton";
+import { DownloadButton } from "@openwdl/ui";
 import styles from "./Downloads.module.css";
 
 /**

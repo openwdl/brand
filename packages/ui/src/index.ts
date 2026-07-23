@@ -46,7 +46,15 @@ export type { CodeBlockProps } from "./components/CodeBlock";
 export { Nav } from "./components/Nav";
 export type { NavProps, NavLink } from "./components/Nav";
 export { Footer } from "./components/Footer";
-export type { FooterProps } from "./components/Footer";
+export type {
+  FooterProps,
+  FooterAction,
+  FooterColumn,
+  FooterCTA,
+  FooterLink,
+} from "./components/Footer";
+export { OpenWDLFooter } from "./components/OpenWDLFooter";
+export type { OpenWDLFooterProps } from "./components/OpenWDLFooter";
 
 export { copyText } from "./lib/clipboard";
 export { highlightToHtml } from "./lib/highlight";

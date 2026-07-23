@@ -1,10 +1,16 @@
 .nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
   padding: 1rem var(--space);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
 }
 
 .sticky {

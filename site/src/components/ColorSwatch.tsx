@@ -1,5 +1,5 @@
 import { copyText } from "../lib/clipboard";
-import { useToast } from "./ToastProvider";
+import { useToast } from "@openwdl/ui";
 import styles from "./ColorSwatch.module.css";
 
 /**

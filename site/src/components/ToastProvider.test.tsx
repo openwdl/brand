@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, act } from "@testing-library/react";
-import { ToastProvider, useToast } from "./ToastProvider";
+import { ToastProvider, useToast } from "@openwdl/ui";
 
 function Trigger() {
   const toast = useToast();

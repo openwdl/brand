@@ -18,26 +18,21 @@ Public Sans carries the banner copy, body links, contact details, and legal text
 
 ## Component Contract
 
-`Footer` remains content-agnostic. It does not import OpenWDL assets, Slack or GitHub icons, repository URLs, email addresses, or licensing text.
+`Footer` remains content-agnostic. `OpenWDLFooter` composes it into the canonical organization-wide footer and owns the OpenWDL CTA copy, destination links, contact address, current-year copyright, and Slack and GitHub icons.
 
 The component accepts a `cta` object with a heading, optional description, and action links. Each action supplies a text label, destination, and optional icon node. The component accepts the existing logo, logo destination, tagline, and columns. `FooterLink` supports an `external` flag that adds a visible external-link indicator; action links use both a recognizable icon and visible text.
 
 The component exposes `copyright` for the bottom-left notice and a generic optional `legal` node for bottom-right content. It removes the license-specific prop because licensing belongs to each consuming site. Inherited footer attributes and `className` continue to forward to the root `<footer>`.
 
-The brand site supplies:
+The canonical tagline is “An open standard for human-readable and writable workflow descriptions.” Each OpenWDL site supplies its logo. The brand site additionally supplies:
 
-- A runtime copyright string, `© ${new Date().getFullYear()} The OpenWDL Developers.`
 - The CC BY 4.0 notice as `legal`, because the notice applies to the brand guidelines and assets.
-- Slack and GitHub action icons from the site’s existing `react-icons` dependency.
-- Explore links for the OpenWDL home page, blog, documentation, and brand assets.
-- Project links for the specification, governance, and brand repositories.
-- `hello@openwdl.org` in the contact column.
 
 ## Link and Icon Behavior
 
 Every action combines a decorative icon with a visible label, so the destination remains understandable when images fail or assistive technology ignores the icon. Icon nodes receive `aria-hidden` at the call site. Slack and GitHub retain their recognizable marks; other external destinations use the shared external-link indicator.
 
-The brand site imports Slack and GitHub marks from its installed `react-icons` dependency. Neither the component nor the site fetches icon assets from a CDN. The action labels are `Join Slack` and `Follow on GitHub`.
+`OpenWDLFooter` imports Slack and GitHub marks from the package’s `react-icons` dependency. Neither component fetches icon assets from a CDN. The action labels are `Join Slack` and `Follow on GitHub`.
 
 External links do not force a new browser tab. The external indicator communicates that the destination leaves the current site without overriding the visitor’s navigation preference.
 

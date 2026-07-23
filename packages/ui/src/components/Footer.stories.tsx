@@ -1,26 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Footer } from "./Footer";
-import { Link } from "./Link";
+import { OpenWDLFooter } from "./OpenWDLFooter";
 
-const meta: Meta<typeof Footer> = {
+const meta: Meta<typeof OpenWDLFooter> = {
   title: "Chrome/Footer",
-  component: Footer,
+  component: OpenWDLFooter,
   parameters: { layout: "fullscreen" },
 };
 export default meta;
 
-type Story = StoryObj<typeof Footer>;
+type Story = StoryObj<typeof OpenWDLFooter>;
 
-/** Copyright + license on the left, a repository link on the right. */
+/** Canonical footer shared by OpenWDL sites. */
 export const Default: Story = {
   args: {
-    copyright: "© 2019 to Present The OpenWDL Developers.",
-    license: (
-      <>
-        Made available under the{" "}
-        <Link href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</Link> license.
-      </>
-    ),
-    children: <Link href="https://github.com/openwdl/brand">openwdl/brand</Link>,
+    logo: <strong style={{ fontSize: "1.1rem", color: "var(--accent)" }}>OpenWDL</strong>,
   },
 };

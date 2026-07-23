@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Nav } from "./Nav";
+import styles from "./Nav.module.css";
 
 describe("Nav", () => {
   it("renders the provided links with their hrefs", () => {
@@ -17,5 +18,10 @@ describe("Nav", () => {
   it("renders extra children alongside the links", () => {
     render(<Nav links={[]}><button>Toggle</button></Nav>);
     expect(screen.getByRole("button", { name: "Toggle" })).toBeInTheDocument();
+  });
+
+  it("contains its content in a max-width inner wrapper", () => {
+    render(<Nav logo={<span>OpenWDL</span>} links={[]} />);
+    expect(screen.getByRole("banner").firstElementChild).toHaveClass(styles.inner);
   });
 });
