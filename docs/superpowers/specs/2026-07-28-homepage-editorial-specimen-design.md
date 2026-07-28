@@ -18,9 +18,9 @@ The supporting paragraph defines WDL without promotional claims:
 
 > WDL is an open language for expressing tasks, data, dependencies, and runtime requirements. The same description can be interpreted by different execution engines.
 
-Two inline links follow the introduction. `Read the language guide` links to the existing first-workflow or language-guide entry point. `WDL 1.3 specification` links to the current specification. These links use normal text-link hierarchy rather than filled or outlined campaign buttons.
+Two inline links follow the introduction. `Read the language guide` links to `/docs/learn/overview/`. `WDL 1.3 specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md`. These links use normal text-link hierarchy rather than filled or outlined campaign buttons.
 
-The code specimen remains a short, valid `align_reads.wdl` workflow. It includes a typed collection input, a `scatter`, an `align` call, and a collected `Array[File]` output. The adjacent graph depicts the same input, scattered calls, and output. The `align · 02` node connects directly to `BAMs`, as do the other completed branches.
+The code specimen remains a short, valid `align_reads.wdl` workflow. It includes a typed collection input, a `scatter`, an `align` call, and a collected `Array[File]` output. The adjacent graph depicts the same input, scattered calls, and output. All three `align` nodes connect to `BAMs` with equal, neutral edges; the graph does not distinguish live, completed, or queued work.
 
 The metadata line reads `Open standard`, `Current version 1.3`, and `Local · HPC · Cloud`. It provides reference facts without behaving like a trust or sales strip.
 
@@ -30,7 +30,7 @@ The introduction and specimen sit within the site's normal content width. The se
 
 The source and execution graph occupy two equal, aligned panes within one bordered frame. Each pane has a small factual label: `align_reads.wdl` and `Execution structure`. The source panel does not tilt, float, overlap the graph, or use a dark window treatment that differs from the active theme.
 
-The graph has the same visual weight as the source. It remains legible without becoming an illustration behind another element. A faint structural grid remains in the section background, but radial glow, perspective, pronounced shadow, and simulated status indicators are removed.
+The graph has the same visual weight as the source. It remains legible without becoming an illustration behind another element. A faint structural grid remains within the content-width section bounds, but radial glow, perspective, pronounced shadow, and simulated status indicators are removed.
 
 The metadata line sits below the specimen with a quiet top rule. It aligns with the specimen rather than spanning the viewport.
 
@@ -38,19 +38,19 @@ The metadata line sits below the specimen with a quiet top rule. It aligns with 
 
 The introduction uses inline links with the site's existing hover and focus-visible behavior. The specimen itself is not interactive.
 
-Slow edge tracing remains as the only motion cue because it explains the relationship between workflow description and execution. The code, panels, nodes, and background remain static. Under `prefers-reduced-motion: reduce`, the graph renders as a complete static state.
+Slow edge tracing remains as the only motion cue because it explains the relationship between workflow description and execution. The trace traverses all equivalent graph edges without implying per-node execution status. The code, panels, nodes, and background remain static. Under `prefers-reduced-motion: reduce`, the graph renders as a complete static state.
 
 ## Responsive Behavior
 
-Desktop presents the source and graph side by side. Narrow screens stack the source above a simplified graph within the same bordered specimen. The graph remains visible because it carries half of the section's explanatory meaning.
+Desktop presents the source and graph side by side. Narrow screens stack the source above the same graph topology within the bordered specimen. The graph remains visible because it reinforces the source's scatter-and-collect structure.
 
-The mobile graph uses compact node spacing and labels while preserving the relationship among `samples`, the three scattered `align` calls, and `BAMs`. The layout must not introduce horizontal scrolling. Metadata wraps in its existing reading order.
+`ExecutionGraph` uses one compact horizontal topology with a `360 × 180` view box at every breakpoint. The SVG fills its pane width while preserving its aspect ratio, which keeps labels legible at a `320px` viewport without maintaining separate desktop and mobile diagrams. It preserves the relationship among `samples`, the three scattered `align` calls, and `BAMs`. The layout must not introduce horizontal scrolling. Metadata wraps in its existing reading order.
 
 ## Themes and Accessibility
 
 Both panes use shared theme surfaces, structural borders, text colors, and accent colors. Light mode resembles a technical document rather than a dark terminal embedded in a white page. Dark mode avoids glow and excessive contrast between the specimen and its surroundings.
 
-The page contains one `h1`. The source remains semantic code inside a labelled region. The graph is decorative because the adjacent source and surrounding prose communicate the same relationship; assistive technology does not need to traverse its SVG geometry.
+The page contains one `h1`. The source remains semantic code inside a labelled region. The definition and source explicitly communicate that `scatter` applies one call to each input and collects the outputs, so the graph introduces no information available only visually. The graph remains decorative, and assistive technology does not need to traverse its SVG geometry.
 
 Links meet WCAG AA contrast and retain visible keyboard focus. The layout respects user motion preferences and remains readable at text zoom.
 
@@ -60,9 +60,11 @@ Links meet WCAG AA contrast and retain visible keyboard focus. The layout respec
 
 ## Verification
 
-Component tests verify the factual heading and definition, both destinations, semantic code region, current version metadata, and single `h1`. A source-level regression test keeps the three output connections in the graph, including the direct `align · 02` to `BAMs` path.
+Component tests verify the factual heading and definition, both exact link labels and destinations, semantic code region, metadata strings `Open standard`, `Current version 1.3`, and `Local · HPC · Cloud`, and the single `h1`. A source-level regression test preserves three equivalent output connections from the scattered `align` nodes to `BAMs`.
 
-Responsive checks cover side-by-side desktop panes, stacked mobile panes, graph visibility, and absence of horizontal overflow. Theme checks cover light and dark contrast. Reduced-motion checks confirm that the explanatory graph remains complete without animation.
+The implementation replaces the superseded `AboutPage.test.tsx` expectations for `Write once. Run anywhere.`, `Write your first workflow`, `Read the spec`, and `WDL 1.3`. It also replaces the `HomeHero.module.css.test.ts` assertions for viewport-height padding, perspective transforms, hidden short-viewport graphs, and the ultrawide execution rail.
+
+Responsive checks cover side-by-side desktop panes, stacked mobile panes, the single fluid graph topology, graph visibility, and absence of horizontal overflow. Theme checks cover light and dark contrast. Reduced-motion checks confirm that the explanatory graph remains complete without animation.
 
 ## Scope
 
