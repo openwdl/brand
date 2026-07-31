@@ -28,7 +28,7 @@ The graph pane contains a quiet `Local · HPC · Cloud` footer to show that the 
 
 ## Composition
 
-The opening section stays within the site's normal `75rem` content width. A centered `42.5rem` introduction sits above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen retains the full section bounds, including on ultrawide screens.
+The opening section stays within the site's normal `75rem` content width. A centered `42.5rem` introduction sits `2rem` above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen retains the full section bounds, including on ultrawide screens.
 
 The introduction and specimen form one group centered vertically in the viewport area below the navbar. The hero uses the remaining small viewport height as a minimum rather than a fixed height, so short or narrow screens grow to fit the content without clipping or overlap.
 
