@@ -22,7 +22,7 @@ The supporting paragraph defines WDL without promotional claims:
 
 Two restrained call-to-action buttons follow the introduction. `Read the language guide` links to `/docs/learn/overview/` and uses the accent-filled primary treatment. `WDL 1.3 specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md` and uses an outlined secondary treatment. Both actions share a compact height, use quiet hover and focus states without glow or lift, and wrap as a group on narrow screens.
 
-The code specimen presents a generic `workflow.wdl` rather than a domain-specific pipeline. It imports a reusable step, accepts `Array[File] inputs`, scatters `steps.process` across each `File`, and exposes the collected `Array[File] results`. The adjacent graph depicts the same fan-out and fan-in relationship as `inputs → process ×3 → results`. Small `scatter` and `gather` annotations identify those transitions; `gather` describes WDL's implicit collection of scattered call outputs rather than a nonexistent language keyword.
+The code specimen presents a generic workflow-only `workflow.wdl` snippet rather than a domain-specific pipeline. It accepts `Array[File] inputs`, scatters `process` across each `File`, and exposes the collected `Array[File] results`. Each call passes `file` on its own shorthand line without an `input:` prefix or `file = file` assignment. The snippet omits a version declaration and the `process` task definition because it illustrates workflow structure rather than serving as a standalone executable file. The input and output declarations each occupy their own line inside expanded blocks, and one blank line separates the input, scatter, and output blocks. Syntax highlighting treats both `scatter` and `in` as keywords. The adjacent graph depicts the same fan-out and fan-in relationship as `inputs → process ×3 → results`. Small `scatter` and `gather` annotations identify those transitions; `gather` describes WDL's implicit collection of scattered call outputs rather than a nonexistent language keyword.
 
 The graph pane contains a quiet `Local · HPC · Cloud` footer to show that the same workflow description can target different execution environments. No metadata strip sits below the specimen.
 
@@ -30,9 +30,11 @@ The graph pane contains a quiet `Local · HPC · Cloud` footer to show that the 
 
 The opening section stays within the site's normal `75rem` content width. A centered `42.5rem` introduction sits above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen retains the full section bounds, including on ultrawide screens.
 
+The introduction and specimen form one group centered vertically in the viewport area below the navbar. The hero uses the remaining small viewport height as a minimum rather than a fixed height, so short or narrow screens grow to fit the content without clipping or overlap.
+
 The source and execution graph occupy two equal, aligned panes within one bordered frame. Each pane has a small factual label: `workflow.wdl` and `Execution structure`. The source panel does not tilt, float, overlap the graph, or use a dark window treatment that differs from the active theme.
 
-The scatter/gather graph is centered horizontally and vertically in the space above its execution-target footer. It has the same visual weight as the source and remains legible without becoming an illustration behind another element. A faint structural grid remains within the content-width section bounds, but radial glow, perspective, pronounced shadow, and simulated status indicators are removed.
+The scatter/gather graph is centered horizontally and vertically in the space above its execution-target footer. Its fan-out and fan-in edges mirror each other, every process box preserves visible horizontal padding around its label, and the `scatter` and `gather` annotations sit slightly above their edge regions. It has the same visual weight as the source and remains legible without becoming an illustration behind another element. A faint structural grid remains within the content-width section bounds, but radial glow, perspective, pronounced shadow, and simulated status indicators are removed.
 
 ## Interaction and Motion
 
