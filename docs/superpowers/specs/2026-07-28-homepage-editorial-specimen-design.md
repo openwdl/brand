@@ -14,11 +14,13 @@ The heading reads:
 
 > Describe workflows independently of the system that runs them.
 
+The heading uses an intentional break after `independently` so it remains two lines across practical viewport widths. Its type scales down on narrow phones rather than introducing a third line.
+
 The supporting paragraph defines WDL without promotional claims:
 
 > WDL is an open language for expressing tasks, data, dependencies, and runtime requirements. The same description can be interpreted by different execution engines.
 
-Two inline links follow the introduction. `Read the language guide` links to `/docs/learn/overview/`. `WDL 1.3 specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md`. These links use normal text-link hierarchy rather than filled or outlined campaign buttons.
+Two restrained call-to-action buttons follow the introduction. `Read the language guide` links to `/docs/learn/overview/` and uses the accent-filled primary treatment. `WDL 1.3 specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md` and uses an outlined secondary treatment. Both actions share a compact height, use quiet hover and focus states without glow or lift, and wrap as a group on narrow screens.
 
 The code specimen remains a short, valid `align_reads.wdl` workflow. It includes a typed collection input, a `scatter`, an `align` call, and a collected `Array[File]` output. The adjacent graph depicts the same input, scattered calls, and output. All three `align` nodes connect to `BAMs` with equal, neutral edges; the graph does not distinguish live, completed, or queued work.
 
@@ -26,7 +28,7 @@ The metadata line reads `Open standard`, `Current version 1.3`, and `Local · HP
 
 ## Composition
 
-The introduction and specimen sit within the site's normal content width. The section no longer fills the viewport or relies on an oversized display headline. A moderate heading and a short paragraph establish the subject, followed immediately by the technical artifact.
+The opening section stays within the site's normal `75rem` content width. A centered `42.5rem` introduction sits above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen and metadata retain the full section bounds, including on ultrawide screens.
 
 The source and execution graph occupy two equal, aligned panes within one bordered frame. Each pane has a small factual label: `align_reads.wdl` and `Execution structure`. The source panel does not tilt, float, overlap the graph, or use a dark window treatment that differs from the active theme.
 
@@ -36,7 +38,7 @@ The metadata line sits below the specimen with a quiet top rule. It aligns with 
 
 ## Interaction and Motion
 
-The introduction uses inline links with the site's existing hover and focus-visible behavior. The specimen itself is not interactive.
+The introduction uses primary and secondary CTA links with restrained hover and focus-visible behavior. The specimen itself is not interactive.
 
 Slow edge tracing remains as the only motion cue because it explains the relationship between workflow description and execution. The trace traverses all equivalent graph edges without implying per-node execution status. The code, panels, nodes, and background remain static. Under `prefers-reduced-motion: reduce`, the graph renders as a complete static state.
 
