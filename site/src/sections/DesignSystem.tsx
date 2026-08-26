@@ -12,12 +12,11 @@ import {
   Link,
   useToast,
 } from "@openwdl/ui";
+import { FiExternalLink } from "react-icons/fi";
 import { ChapterHeader } from "../components/ChapterHeader";
 import styles from "./DesignSystem.module.css";
 
-const exampleCode = `workflow hello_world {
-  call say_hello
-}`;
+const exampleCode = "{ greeting }";
 
 /** Curated component-family preview linking to the complete Storybook reference. */
 export function DesignSystem() {
@@ -93,7 +92,7 @@ export function DesignSystem() {
             <h3>Shared site chrome</h3>
             <div className={styles.chrome} aria-label="Static site chrome preview">
               <span className={styles.mark}>OpenWDL</span>
-              <span>About</span>
+              <span>Modules</span>
               <span>Docs</span>
               <span className={styles.chromeAction}>Get started</span>
             </div>
@@ -109,7 +108,11 @@ export function DesignSystem() {
             <h3>Inspect every variant and interaction in Storybook.</h3>
             <p>Explore controls, responsive examples, themes, and accessibility behavior.</p>
           </div>
-          <a className={styles.storybookLink} href={`${import.meta.env.BASE_URL}storybook/`}>
+          <a
+            className={styles.storybookLink}
+            href="https://openwdl.github.io/ui/"
+          >
+            <FiExternalLink aria-hidden="true" />
             Explore Storybook
           </a>
         </div>

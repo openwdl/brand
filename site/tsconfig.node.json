@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "noEmit": false,
+    "target": "ES2022",
+    "noEmit": true,
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "scripts/**/*.ts"],
+  "exclude": ["scripts/**/*.test.ts"]
 }

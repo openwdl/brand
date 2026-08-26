@@ -33,3 +33,12 @@ describe("responsive specimen grids", () => {
       .toMatch(/\.preview\s*\{[^}]*padding-inline:\s*1rem/s);
   });
 });
+
+describe("site layout tokens", () => {
+  it("keeps the site max width in rem units", () => {
+    const siteTokens = stylesheet("./tokens.css");
+
+    expect(siteTokens).toMatch(/--maxw:\s*75rem/);
+    expect(siteTokens).not.toMatch(/--maxw:\s*1200px/);
+  });
+});

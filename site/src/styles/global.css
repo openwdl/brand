@@ -27,6 +27,11 @@ body::before {
   mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
 }
 
+/* The setup wizard is a dense form surface; the dot grid competes with it. */
+body:has(main[data-page="get-started"])::before {
+  display: none;
+}
+
 /* Heading margin overrides for the brand-guidelines page layout. */
 h2 { margin-bottom: 0.75rem; }
 h3 { margin: 1.5rem 0 0.5rem; }

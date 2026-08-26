@@ -6,9 +6,15 @@ describe("App navigation", () => {
     render(<App />);
     const navigation = screen.getByRole("navigation", { name: "Primary navigation" });
 
-    expect(within(navigation).getByRole("link", { name: "About" })).toBeInTheDocument();
-    expect(within(navigation).getByRole("link", { name: "Docs" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Get started" })).toBeInTheDocument();
+    expect(within(navigation).queryByRole("link", { name: "About" })).not.toBeInTheDocument();
+    expect(within(navigation).getByRole("link", { name: "Docs" }))
+      .toBeInTheDocument();
+    expect(within(navigation).queryByRole("link", { name: "Brand" }))
+      .not.toBeInTheDocument();
+    expect(within(navigation).getByRole("link", { name: "Modules" }))
+      .toHaveAttribute("href", "https://registry.openwdl.org");
+    // The "Get started" action link sits in the site header but outside the <nav>
+    expect(within(navigation.closest("header") as HTMLElement).getByRole("link", { name: "Get started" })).toBeInTheDocument();
     expect(within(navigation).queryByRole("link", { name: "Logo system" })).toBeNull();
   });
 
@@ -63,6 +69,10 @@ describe("App brand field guide", () => {
     expect(chapters).toHaveLength(7);
     expect(chapters.every((chapter) => chapter.getAttribute("data-revealed") === "true"))
       .toBe(true);
+    expect(screen.getByRole("link", { name: "Download brand assets" }).querySelector("svg"))
+      .toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByRole("link", { name: "Read the guidelines" }).querySelector("svg"))
+      .toHaveAttribute("aria-hidden", "true");
   });
 
   it("shows the full design-system preview and Storybook handoff", () => {
@@ -79,7 +89,10 @@ describe("App brand field guide", () => {
       expect(screen.getByRole("heading", { level: 3, name: family })).toBeInTheDocument();
     }
     expect(screen.getByRole("link", { name: /explore storybook/i }))
-      .toHaveAttribute("href", "/brand/storybook/");
+      .toHaveAttribute("href", "https://openwdl.github.io/ui/");
+    expect(screen.getByRole("link", { name: /explore storybook/i }).querySelector("svg"))
+      .toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByText("{ greeting }")).toBeInTheDocument();
   });
 });
 
@@ -94,5 +107,9 @@ describe("App footer", () => {
     expect(screen.getByText(/brand guidelines and assets licensed under/i))
       .toBeInTheDocument();
     expect(screen.getByRole("link", { name: /cc by 4\.0/i })).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo").querySelector(
+      'img[alt="OpenWDL"]',
+    ))
+      .toBeInTheDocument();
   });
 });

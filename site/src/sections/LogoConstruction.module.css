@@ -16,5 +16,6 @@
 .note { color: var(--text-muted); font-size: 0.9rem; }
 .preview img { max-width: 100%; height: auto; }
 .uses { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; padding: 0; list-style: none; }
-.uses li { padding: 0.3rem 0.55rem; border: 1px solid var(--teal-800); border-radius: 999px; color: var(--teal-300); font-family: var(--font-mono); font-size: 0.7rem; }
+.uses li { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.55rem; border: 1px solid currentColor; border-radius: 999px; color: var(--accent); font-family: var(--font-mono); font-size: 0.7rem; }
+.uses li::before { content: ""; flex: none; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 2px color-mix(in srgb, currentColor 18%, transparent); }
 @media (max-width: 768px) { .cards { grid-template-columns: 1fr; margin-left: 0; } }

@@ -1,3 +1,4 @@
+import { FiBookOpen, FiDownload } from "react-icons/fi";
 import { logoAssets } from "../data/brand";
 import styles from "./Hero.module.css";
 
@@ -24,8 +25,14 @@ export function Hero() {
           consistent across environments, and developed in the open.
         </p>
         <div className={styles.actions}>
-          <a className={styles.primary} href="#downloads">Download brand assets</a>
-          <a className={styles.secondary} href="#foundation">Read the guidelines</a>
+          <a className={styles.primary} href="#downloads">
+            <FiDownload aria-hidden="true" />
+            Download brand assets
+          </a>
+          <a className={styles.secondary} href="#foundation">
+            <FiBookOpen aria-hidden="true" />
+            Read the guidelines
+          </a>
         </div>
       </div>
     </section>

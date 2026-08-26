@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiDownload, FiFileText } from "react-icons/fi";
 import { logoAssets } from "../data/brand";
 import { buildAssetZip } from "../lib/zip";
 import { DownloadButton } from "@openwdl/ui";
@@ -87,6 +88,7 @@ export function Downloads(): JSX.Element {
             {logoAssets.length} asset sets · {logoAssets.length * 2} individual files
           </span>
           <button type="button" className={styles.all} onClick={downloadAll} disabled={busy}>
+            <FiDownload aria-hidden="true" />
             {busy ? "Preparing…" : "Download all assets (.zip)"}
           </button>
         </div>
@@ -128,6 +130,7 @@ export function Downloads(): JSX.Element {
           href={`${import.meta.env.BASE_URL}brand-guidelines.pdf`}
           download
         >
+          <FiFileText aria-hidden="true" />
           Download archived PDF
         </a>
       </div>

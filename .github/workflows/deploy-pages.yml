@@ -26,11 +26,20 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run test -w @openwdl/brand
-      - run: npm run build -w @openwdl/brand
-      - run: npm run build-storybook -w @openwdl/ui
-        env:
-          STORYBOOK_BASE: /brand/storybook/
-      - run: cp -r packages/ui/storybook-static site/dist/storybook
+
+      # Preview build (/brand/ base) — this is what Pages serves
+      - run: OPENWDL_BASE=/brand/ npm run build -w @openwdl/brand
+      - run: OPENWDL_BASE=/brand/ npm run test:static -w @openwdl/brand
+
+      # Verify production-root build (/  base) is also clean, then discard
+      - run: rm -rf site/dist site/dist-server
+      - run: OPENWDL_BASE=/ npm run build -w @openwdl/brand
+      - run: OPENWDL_BASE=/ npm run test:static -w @openwdl/brand
+
+      # Restore the /brand/ build for upload
+      - run: rm -rf site/dist site/dist-server
+      - run: OPENWDL_BASE=/brand/ npm run build -w @openwdl/brand
+      - run: OPENWDL_BASE=/brand/ npm run test:static -w @openwdl/brand
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site/dist

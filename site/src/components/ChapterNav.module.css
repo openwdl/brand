@@ -3,7 +3,7 @@
   top: 6rem;
   align-self: start;
   padding: 2rem 1.5rem;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--chrome-border);
 }
 
 .title {
@@ -64,10 +64,27 @@
     justify-content: space-between;
     padding: 0.75rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     background: var(--surface);
     color: var(--text);
     font-family: var(--font-mono);
+    transition:
+      color var(--motion-control-duration) var(--motion-control-ease),
+      border-color var(--motion-control-duration) var(--motion-control-ease),
+      transform var(--motion-control-duration) var(--motion-control-ease);
+  }
+
+  .toggle:hover {
+    transition-delay: var(--motion-control-delay);
+    transform: translateY(var(--motion-control-lift));
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .toggle:active {
+    transition-delay: 0ms;
+    transition-duration: var(--motion-control-press-duration);
+    transform: translateY(0);
   }
 
   .links {

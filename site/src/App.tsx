@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ToastProvider, OpenWDLNav, Container, OpenWDLFooter } from "@openwdl/ui";
-import { logoAssets } from "./data/brand";
+import { ToastProvider, NavBar, Container, Footer } from "@openwdl/ui";
 import { Hero } from "./sections/Hero";
 import { Foundation } from "./sections/Foundation";
 import { LogoConstruction } from "./sections/LogoConstruction";
@@ -13,19 +12,14 @@ import { ChapterNav } from "./components/ChapterNav";
 import styles from "./App.module.css";
 
 /**
- * Root application component — the single top-level entry point for the
- * OpenWDL brand-guidelines site.
+ * OpenWDL brand field-guide page.
  *
- * Composes every page section inside the shared library Nav, Container, and
+ * Composes every page section inside the shared library NavBar, Container, and
  * Footer, wrapped by ToastProvider so copy confirmations surface anywhere in
  * the tree without prop-drilling.
  */
 export default function App() {
   const fieldGuideRef = useRef<HTMLDivElement>(null);
-  const fullLogo = logoAssets.find((a) => a.name === "Full Logo (Teal + White)")!;
-  const logoImg = (height: number) => (
-    <img src={fullLogo.svg} alt="OpenWDL" height={height} />
-  );
 
   useEffect(() => {
     const sections = Array.from(
@@ -52,7 +46,9 @@ export default function App() {
 
   return (
     <ToastProvider>
-      <OpenWDLNav logo={logoImg(24)} />
+      <NavBar
+        baseHref={import.meta.env.BASE_URL}
+      />
       <Container>
         <main>
           <Hero />
@@ -70,8 +66,7 @@ export default function App() {
           </div>
         </main>
       </Container>
-      <OpenWDLFooter
-        logo={logoImg(28)}
+      <Footer
         legal={(
           <>
             Brand guidelines and assets licensed under{" "}

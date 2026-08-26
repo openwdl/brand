@@ -12,23 +12,23 @@ The eyebrow reads `Workflow Description Language`.
 
 The heading reads:
 
-> Describe workflows independently of the system that runs them.
+> A human-readable description language for running workflows anywhere.
 
-The heading uses an intentional break after `independently` so it remains two lines across practical viewport widths. Its type scales down on narrow phones rather than introducing a third line.
+The heading uses an intentional break after `language` so it remains two lines across practical viewport widths. Its type scales down on narrow phones rather than introducing a third line.
 
 The supporting paragraph defines WDL without promotional claims:
 
-> WDL is an open language for expressing tasks, data, dependencies, and runtime requirements. The same description can be interpreted by different execution engines.
+> WDL is an openly governed language for describing tasks, inputs, dependencies, and runtime requirements. Different execution engines can interpret the same description on laptops, clusters, and cloud platforms.
 
-Two restrained call-to-action buttons follow the introduction. `Read the language guide` links to `/docs/learn/overview/` and uses the accent-filled primary treatment. `WDL 1.3 specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md` and uses an outlined secondary treatment. Both actions share a compact height, use quiet hover and focus states without glow or lift, and wrap as a group on narrow screens.
+Two restrained call-to-action buttons follow the introduction. `Read the language guide` links to `/docs/learn/overview/` and uses the accent-filled primary treatment. `View the specification` links to `https://github.com/openwdl/wdl/blob/wdl-1.3/SPEC.md` and uses an outlined secondary treatment. Both actions share a compact height, use quiet hover and focus states without glow or lift, and wrap as a group on narrow screens.
 
-The code specimen presents a generic workflow-only `workflow.wdl` snippet rather than a domain-specific pipeline. It accepts `Array[File] inputs`, scatters `process` across each `File`, and exposes the collected `Array[File] results`. Each call passes `file` on its own shorthand line without an `input:` prefix or `file = file` assignment. The snippet omits a version declaration and the `process` task definition because it illustrates workflow structure rather than serving as a standalone executable file. The input and output declarations each occupy their own line inside expanded blocks, and one blank line separates the input, scatter, and output blocks. Syntax highlighting treats both `scatter` and `in` as keywords. The adjacent graph depicts the same fan-out and fan-in relationship as `inputs → process ×3 → results`. Small `scatter` and `gather` annotations identify those transitions; `gather` describes WDL's implicit collection of scattered call outputs rather than a nonexistent language keyword.
+The code specimen presents a generic workflow-only `workflow.wdl` snippet rather than a domain-specific pipeline. It accepts `Array[File] inputs`, scatters `process` across each `File`, and exposes the collected `Array[File] results`. Each call uses the one-line shorthand `call process { file }` without an `input:` prefix or `file = file` assignment. The snippet omits a version declaration and the `process` task definition because it illustrates workflow structure rather than serving as a standalone executable file. A muted, non-selectable gutter numbers all 13 source lines without adding numbers to the copied or announced code. The input and output declarations each occupy their own line inside expanded blocks, and one blank line separates the input, scatter, and output blocks. Syntax highlighting treats both `scatter` and `in` as keywords. The adjacent graph depicts the same fan-out and fan-in relationship as `inputs → process ×3 → results`. Small `scatter` and `gather` annotations identify those transitions; `gather` describes WDL's implicit collection of scattered call outputs rather than a nonexistent language keyword.
 
 The graph pane contains a quiet `Local · HPC · Cloud` footer to show that the same workflow description can target different execution environments. No metadata strip sits below the specimen.
 
 ## Composition
 
-The opening section stays within the site's normal `75rem` content width. A centered `42.5rem` introduction sits `2rem` above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen retains the full section bounds, including on ultrawide screens.
+The opening section stays within the site's normal `75rem` content width. A centered `50rem` introduction keeps both intentional title lines centered and sits `4rem` above the wider specimen, with the definition constrained to `36.25rem` for a balanced reading measure. The specimen retains the full section bounds, including on ultrawide screens.
 
 The introduction and specimen form one group centered vertically in the viewport area below the navbar. The hero uses the remaining small viewport height as a minimum rather than a fixed height, so short or narrow screens grow to fit the content without clipping or overlap.
 

@@ -6,7 +6,7 @@ import globals from "globals";
 export default tseslint.config(
   // ── Ignore build output and generated files ──────────────────────────────
   {
-    ignores: ["dist/**", "node_modules/**"],
+    ignores: ["dist/**", "dist-server/**", "node_modules/**", "src/generated/**"],
   },
 
   // ── TypeScript source files ───────────────────────────────────────────────
@@ -65,9 +65,9 @@ export default tseslint.config(
     // No jsdoc plugin; no jsdoc rules.
   },
 
-  // ── Entry point — JSDoc not required ─────────────────────────────────────
+  // ── Entry points — JSDoc not required ────────────────────────────────────
   {
-    files: ["src/main.tsx"],
+    files: ["src/entry-client.tsx", "src/entry-server.tsx"],
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       globals: {
@@ -80,8 +80,32 @@ export default tseslint.config(
 
   // ── Config / script files (Node environment) ──────────────────────────────
   {
-    files: ["*.config.{js,ts,mjs}", "scripts/**/*.{js,mjs}"],
+    files: ["*.config.{js,ts,mjs}"],
     extends: [js.configs.recommended],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.es2020,
+      },
+    },
+  },
+
+  // ── Script TypeScript/JS files ─────────────────────────────────────────────
+  {
+    files: ["scripts/**/*.{ts,js,mjs}"],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.es2020,
+      },
+    },
+  },
+
+  // ── Script test files — JSDoc not required ────────────────────────────────
+  {
+    files: ["scripts/**/*.test.ts"],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       globals: {
         ...globals.node,

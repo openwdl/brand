@@ -18,7 +18,7 @@
   --font-sans: "Public Sans", system-ui, sans-serif;
   --font-mono: "Martian Mono", ui-monospace, monospace;
   /* Layout */
-  --maxw: 1200px;
+  --maxw: 75rem;
   --space: 1.5rem;
   /* Dotted-grid pattern: circles strung along horizontal and vertical lines
      that form large square cells (empty between). --dot-gap is the spacing
