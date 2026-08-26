@@ -1,4 +1,5 @@
 import { logoAssets } from "../data/brand";
+import { ChapterHeader } from "../components/ChapterHeader";
 import styles from "./LogoConstruction.module.css";
 
 /**
@@ -17,39 +18,53 @@ export function LogoConstruction() {
   const full = logoAssets.find((a) => a.name === "Full Logo (Teal + White)")!;
 
   return (
-    <section id="logo" className={styles.section}>
-      <h2>Logo Construction</h2>
-      <p className={styles.lead}>
-        The logo is a simplified representation of an acyclic computational graph.
-        The custom wordmark features sharp, angular letterforms drawing inspiration
-        from modern monospace and geometric typefaces.
-      </p>
+    <section id="logo-system" className={styles.section}>
+      <ChapterHeader
+        number="02"
+        label="Logo system"
+        title="A computational graph, simplified."
+      >
+        <p>
+          The OpenWDL icon abstracts an acyclic computational graph into connected
+          geometric forms. The custom wordmark pairs that structure with angular
+          letterforms influenced by monospace and geometric type. Choose the form
+          according to how much space and context the application provides.
+        </p>
+      </ChapterHeader>
 
-      {/* Two-column grid: icon-only card on the left, full lockup on the right. */}
       <div className={styles.cards}>
         <div className={styles.card}>
-          <h3>1. Icon Only</h3>
-          {/* Centered preview area with a fixed minimum height for visual balance. */}
+          <h3>Icon only</h3>
           <div className={styles.preview}>
             <img src={icon.svg} alt="OpenWDL icon" height={80} />
           </div>
           <p className={styles.note}>
-            Best for favicons and small UI elements, social media profile images,
-            watermarks and standalone branding marks.
+            Use the standalone mark when the OpenWDL name already appears nearby
+            or the available area cannot support the full lockup.
           </p>
+          <ul className={styles.uses} aria-label="Icon-only uses">
+            <li>Favicons</li>
+            <li>Profile images</li>
+            <li>Compact UI</li>
+            <li>Watermarks</li>
+          </ul>
         </div>
 
         <div className={styles.card}>
-          <h3>2. Full Logo</h3>
-          {/* Same preview dimensions as the icon card for a consistent row height. */}
+          <h3>Full logo</h3>
           <div className={styles.preview}>
             <img src={full.svg} alt="OpenWDL full logo" height={80} />
           </div>
           <p className={styles.note}>
-            Icon + wordmark in horizontal alignment. The preferred version for
-            website headers, official documents and presentations, promotional
-            materials.
+            Use the horizontal icon-and-wordmark lockup whenever the identity
+            needs to stand on its own.
           </p>
+          <ul className={styles.uses} aria-label="Full-logo uses">
+            <li>Website headers</li>
+            <li>Documentation</li>
+            <li>Presentations</li>
+            <li>Promotional material</li>
+          </ul>
         </div>
       </div>
     </section>

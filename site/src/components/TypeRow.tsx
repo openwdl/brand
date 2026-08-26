@@ -1,6 +1,6 @@
 import type { TypeToken } from "../data/brand";
 import { typeTokenToCss } from "../lib/typeToken";
-import { CopyButton } from "./CopyButton";
+import { CopyButton } from "@openwdl/ui";
 import styles from "./TypeRow.module.css";
 
 /**
@@ -22,8 +22,7 @@ export function TypeRow({ token }: { token: TypeToken }) {
         style={{
           fontFamily: `"${token.font}"`,
           fontWeight: token.weight,
-          // Clamp the font size so large display tokens don't break the layout
-          fontSize: `clamp(1rem, ${token.size / 20}rem, ${token.size}px)`,
+          fontSize: `${token.size}px`,
           lineHeight: token.lineHeight,
           // Percent letter-spacing is relative to font size; CSS needs a length, so convert to em.
           letterSpacing: `${token.letterSpacing / 100}em`,
@@ -37,7 +36,7 @@ export function TypeRow({ token }: { token: TypeToken }) {
       {/* Convert the fractional lineHeight to a percentage for readability */}
       <span className={styles.meta}>{Math.round(token.lineHeight * 100)}%</span>
       <span className={styles.meta}>{token.letterSpacing}%</span>
-      <span className={styles.meta}>{token.size}px</span>
+      <span className={`${styles.meta} ${styles.size}`}>{token.size}px</span>
       <CopyButton value={typeTokenToCss(token)} label={`${token.usage} CSS`} />
     </div>
   );

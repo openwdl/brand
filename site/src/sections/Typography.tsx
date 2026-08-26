@@ -11,15 +11,11 @@ import styles from "./Typography.module.css";
  */
 export function Typography() {
   return (
-    <section id="typography" className={styles.section}>
-      <h2>Typography</h2>
-      <p className={styles.lead}>
-        Public Sans is the primary typeface for body text and headings. Martian
-        Mono adds a technical, structured aesthetic for code, labels, and accents.
-        Click "Copy" on any row to grab its CSS.
-      </p>
-
-      <h3>Public Sans</h3>
+    <div className={styles.section}>
+      <div className={styles.subhead}>
+        <h3>Public Sans</h3>
+        <span>{publicSansScale.length} approved styles · Copy CSS from any row</span>
+      </div>
       {/* Iterate over every token in the Public Sans scale */}
       <div className={styles.table}>
         {publicSansScale.map((t) => (
@@ -27,13 +23,16 @@ export function Typography() {
         ))}
       </div>
 
-      <h3>Martian Mono</h3>
+      <div className={styles.subhead}>
+        <h3>Martian Mono</h3>
+        <span>{martianMonoScale.length} approved styles · Copy CSS from any row</span>
+      </div>
       {/* Iterate over every token in the Martian Mono scale */}
       <div className={styles.table}>
         {martianMonoScale.map((t) => (
           <TypeRow key={t.usage} token={t} />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -13,7 +13,7 @@ describe("SEO metadata in index.html", () => {
 
   it("declares the canonical URL", () => {
     expect(html).toContain(
-      '<link rel="canonical" href="https://openwdl.github.io/brand/"',
+      '<link rel="canonical" href="https://brand.openwdl.org/"',
     );
   });
 
@@ -24,10 +24,10 @@ describe("SEO metadata in index.html", () => {
   it("has Open Graph title, url, and image", () => {
     expect(html).toContain('property="og:title"');
     expect(html).toContain(
-      'property="og:url" content="https://openwdl.github.io/brand/"',
+      'property="og:url" content="https://brand.openwdl.org/"',
     );
     expect(html).toContain(
-      'property="og:image" content="https://openwdl.github.io/brand/og-image.png"',
+      'property="og:image" content="https://brand.openwdl.org/og-image.png"',
     );
   });
 
@@ -44,20 +44,20 @@ describe("SEO metadata in index.html", () => {
     expect(m).toBeTruthy();
     const data = JSON.parse(m![1]);
     expect(data["@type"]).toBe("Organization");
-    expect(data.url).toBe("https://openwdl.github.io/brand/");
+    expect(data.url).toBe("https://brand.openwdl.org/");
     expect(data.sameAs).toContain("https://github.com/openwdl/brand");
   });
 });
 
 describe("crawl files in public/", () => {
   it("sitemap lists the canonical URL", () => {
-    expect(sitemap).toContain("<loc>https://openwdl.github.io/brand/</loc>");
+    expect(sitemap).toContain("<loc>https://brand.openwdl.org/</loc>");
   });
 
   it("robots.txt allows crawling and points at the sitemap", () => {
     expect(robots).toMatch(/User-agent: \*/);
     expect(robots).toContain(
-      "Sitemap: https://openwdl.github.io/brand/sitemap.xml",
+      "Sitemap: https://brand.openwdl.org/sitemap.xml",
     );
   });
 });
