@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { logoVariants } from "../data/brand";
 import { recommendVariant } from "../lib/logoVariant";
-import { DownloadButton } from "./DownloadButton";
+import { DownloadButton } from "@openwdl/ui";
 import styles from "./LogoPreview.module.css";
 
 /**
