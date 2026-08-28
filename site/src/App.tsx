@@ -46,9 +46,7 @@ export default function App() {
 
   return (
     <ToastProvider>
-      <NavBar
-        baseHref={import.meta.env.BASE_URL}
-      />
+      <NavBar />
       <Container>
         <main>
           <Hero />
