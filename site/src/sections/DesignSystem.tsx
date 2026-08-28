@@ -27,13 +27,13 @@ export function DesignSystem() {
       <ChapterHeader
         number="06"
         label="Design system"
-        title="Shared components apply the brand to interfaces."
+        title="Use shared components to build OpenWDL interfaces."
       >
         <p>
-          The component library turns the same palette, typography, spacing, and
-          contrast rules into reusable interface foundations. These specimens
-          show its range; Storybook documents every property, variant, state, and
-          accessibility behavior.
+          The component library applies the palette, typography, spacing, and
+          contrast rules to reusable interface elements. These examples show the
+          available component families. Storybook documents each property,
+          variant, state, and accessibility behavior.
         </p>
       </ChapterHeader>
       <div className={styles.content}>
@@ -82,7 +82,7 @@ export function DesignSystem() {
 
           <Card className={styles.family}>
             <h3>Feedback</h3>
-            <p>Actions report completion through the page-level polite status region.</p>
+            <p>Actions announce completion in the page-level status region.</p>
             <Button size="sm" variant="secondary" onClick={() => toast("Example toast")}>
               Show toast
             </Button>
@@ -97,15 +97,15 @@ export function DesignSystem() {
               <span className={styles.chromeAction}>Get started</span>
             </div>
             <p>
-              Canonical navigation and community links connect OpenWDL sites
-              without duplicating global landmarks inside this specimen.
+              Use the shared navigation and community links to connect OpenWDL
+              sites. Do not repeat those global landmarks inside a component.
             </p>
           </Card>
         </div>
         <div className={styles.storybook}>
           <div>
             <span className={styles.eyebrow}>Complete component reference</span>
-            <h3>Inspect every variant and interaction in Storybook.</h3>
+            <h3>Review every variant and interaction in Storybook.</h3>
             <p>Explore controls, responsive examples, themes, and accessibility behavior.</p>
           </div>
           <Button

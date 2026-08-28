@@ -18,12 +18,13 @@ export function Hero() {
         <img src={full.svg} alt="OpenWDL" className={styles.logo} />
         <span className={styles.eyebrow}>OpenWDL brand system</span>
         <h1>
-          <span>Human-readable.</span>
-          <span>Writable. Portable.</span>
+          <span>Clear. Structured.</span>
+          <span>Open by design.</span>
         </h1>
         <p className={styles.mission}>
-          The OpenWDL brand reflects the language itself: clear in structure,
-          consistent across environments, and developed in the open.
+          OpenWDL uses a consistent brand system across websites, documents,
+          presentations, and software. Like the language, the brand is developed
+          in the open.
         </p>
         <div className={styles.actions}>
           <Button as="a" href="#downloads" leadingIcon={<FiDownload />}>

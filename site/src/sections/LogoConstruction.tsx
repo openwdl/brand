@@ -22,13 +22,13 @@ export function LogoConstruction() {
       <ChapterHeader
         number="02"
         label="Logo system"
-        title="A computational graph, simplified."
+        title="The icon simplifies a computational graph."
       >
         <p>
-          The OpenWDL icon abstracts an acyclic computational graph into connected
-          geometric forms. The custom wordmark pairs that structure with angular
-          letterforms influenced by monospace and geometric type. Choose the form
-          according to how much space and context the application provides.
+          The OpenWDL icon turns an acyclic computational graph into simple,
+          connected shapes. The wordmark pairs those shapes with angular letters
+          influenced by monospace and geometric type. Choose the form that fits
+          the available space and context.
         </p>
       </ChapterHeader>
 
@@ -39,8 +39,8 @@ export function LogoConstruction() {
             <img src={icon.svg} alt="OpenWDL icon" height={80} />
           </div>
           <p className={styles.note}>
-            Use the standalone mark when the OpenWDL name already appears nearby
-            or the available area cannot support the full lockup.
+            Use the icon when the OpenWDL name appears nearby or the full logo
+            does not fit.
           </p>
           <ul className={styles.uses} aria-label="Icon-only uses">
             <li>Favicons</li>
@@ -56,8 +56,7 @@ export function LogoConstruction() {
             <img src={full.svg} alt="OpenWDL full logo" height={80} />
           </div>
           <p className={styles.note}>
-            Use the horizontal icon-and-wordmark lockup whenever the identity
-            needs to stand on its own.
+            Use the full logo when it must identify OpenWDL without nearby text.
           </p>
           <ul className={styles.uses} aria-label="Full-logo uses">
             <li>Website headers</li>

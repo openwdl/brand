@@ -77,12 +77,11 @@ export function Downloads(): JSX.Element {
       <ChapterHeader
         number="07"
         label="Downloads"
-        title="Use the source assets."
+        title="Download the source assets."
       >
         <p>
-          Download the complete package or select an individual logo form and
-          color treatment. Every asset is available as a scalable SVG and a
-          high-resolution PNG.
+          Download the full package or choose a logo and color treatment. Each
+          asset is available as a scalable SVG and a high-resolution PNG.
         </p>
       </ChapterHeader>
 
@@ -128,12 +127,12 @@ export function Downloads(): JSX.Element {
 
         <div className={styles.guidance}>
           <div>
-            <h3>Choose SVG for production</h3>
-            <p>Use the vector source for websites, documentation, presentations, and print.</p>
+            <h3>Use SVG for production</h3>
+            <p>Use the vector file for websites, documentation, presentations, and print.</p>
           </div>
           <div>
-            <h3>Choose PNG for compatibility</h3>
-            <p>Use the high-resolution raster where the destination cannot accept vector artwork.</p>
+            <h3>Use PNG for compatibility</h3>
+            <p>Use the high-resolution image when the destination does not accept SVG.</p>
           </div>
         </div>
 

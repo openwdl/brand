@@ -98,10 +98,10 @@ export type LogoVariant = {
  * or printing context. Order matches the canonical brand spec.
  */
 export const logoVariants: LogoVariant[] = [
-  { name: "Teal + White", svg: `${base}assets/svg/full-cyan-logo-white-text.svg`, usage: "Main logo. Best for dark-themed website and documentation UI and marketing materials." },
-  { name: "Teal + Black", svg: `${base}assets/svg/full-cyan-logo-black-text.svg`, usage: "Alternative for light backgrounds while preserving brand presence." },
-  { name: "All White", svg: `${base}assets/svg/full-logo-white.svg`, usage: "For dark backgrounds and monochrome printing." },
-  { name: "All Black", svg: `${base}assets/svg/full-logo-black.svg`, usage: "For light backgrounds and monochrome printing." },
+  { name: "Teal + White", svg: `${base}assets/svg/full-cyan-logo-white-text.svg`, usage: "Use the primary logo on dark backgrounds, including websites, documentation, and marketing materials." },
+  { name: "Teal + Black", svg: `${base}assets/svg/full-cyan-logo-black-text.svg`, usage: "Use on light backgrounds when the primary logo does not provide enough contrast." },
+  { name: "All White", svg: `${base}assets/svg/full-logo-white.svg`, usage: "Use on dark backgrounds when production requires a single-color logo." },
+  { name: "All Black", svg: `${base}assets/svg/full-logo-black.svg`, usage: "Use on light backgrounds when production requires a single-color logo." },
 ];
 
 /**
@@ -144,9 +144,9 @@ export type GridScale = {
  * chosen per context (subtle behind the hero, brighter in documentation cards).
  */
 export const gridScales: GridScale[] = [
-  { name: "Large", abbr: "lg", radius: 2, gap: 8, usage: "Spacious, full-bleed backdrops like hero areas and large empty regions where the texture should read softly and breathe." },
-  { name: "Medium", abbr: "md", radius: 1.5, gap: 6, usage: "The default. Section backgrounds and medium surfaces; the balanced baseline density used across most of the site." },
-  { name: "Small", abbr: "sm", radius: 1, gap: 5, usage: "Compact, dense contexts like small cards, tight panels, and constrained UI components where a finer grain reads better." },
+  { name: "Large", abbr: "lg", radius: 2, gap: 8, usage: "Use for full-width backgrounds, hero areas, and other large open surfaces." },
+  { name: "Medium", abbr: "md", radius: 1.5, gap: 6, usage: "Use as the default for section backgrounds and medium-sized surfaces." },
+  { name: "Small", abbr: "sm", radius: 1, gap: 5, usage: "Use for small cards, tight panels, and compact interface elements." },
 ];
 
 /**
@@ -154,7 +154,7 @@ export const gridScales: GridScale[] = [
  * of clarity, structure, and human-readability.
  */
 export const mission =
-  "The OpenWDL brand embodies clarity, structure, and efficiency, mirroring the core principles of workflow definition. Designed to be human-readable and writable, WDL enables scientists, engineers, and platform operators to create scalable, adaptable workflows with ease.";
+  "OpenWDL uses a clear, consistent brand system across websites, documents, presentations, and software. Like the language, the brand is developed in the open.";
 
 /**
  * The canonical URL for the WDL brand repository on GitHub.

@@ -54,12 +54,12 @@ export function Grid(): JSX.Element {
       <ChapterHeader
         number="05"
         label="Grid and texture"
-        title="Use the dotted grid to add structure, not noise."
+        title="Use the dotted grid for structure, not decoration."
       >
         <p>
-          Choose a scale according to the surface, keep its contrast low behind
-          content, and use one density within a composition. Each specimen below
-          shows the texture at its actual relative density.
+          Match the scale to the surface. Keep the contrast low behind content,
+          and use only one density in each composition. The examples below show
+          the relative density of each scale.
         </p>
       </ChapterHeader>
       <div className={styles.cards}>

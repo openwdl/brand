@@ -4,15 +4,15 @@ import styles from "./Foundation.module.css";
 const principles = [
   {
     title: "Readable",
-    copy: "Use direct language, legible type, and hierarchy that makes the next step obvious.",
+    copy: "Use legible type and a clear hierarchy so readers can find their next step.",
   },
   {
     title: "Structured",
-    copy: "Build pages and interfaces from shared rules rather than isolated treatments.",
+    copy: "Build pages and interfaces from shared rules, not one-off treatments.",
   },
   {
     title: "Portable",
-    copy: "Preserve recognition across websites, documents, presentations, and software.",
+    copy: "Keep OpenWDL recognizable across websites, documents, presentations, and software.",
   },
 ];
 
@@ -23,13 +23,12 @@ export function Foundation() {
       <ChapterHeader
         number="01"
         label="Foundation"
-        title="The visual system follows the language."
+        title="The brand reflects the clarity of the language."
       >
         <p>
-          OpenWDL describes data-processing workflows in a syntax intended for
-          people to read and write. Its visual system applies the same priorities
-          to communication: clear hierarchy, repeatable structure, and consistent
-          behavior across media.
+          People read and write OpenWDL workflows. The brand system supports
+          those same tasks with clear hierarchy, repeatable structure, and
+          consistent behavior across media.
         </p>
       </ChapterHeader>
       <div className={styles.principles}>
@@ -39,6 +38,29 @@ export function Foundation() {
             <p>{copy}</p>
           </article>
         ))}
+      </div>
+      <div className={styles.voice}>
+        <h3>Brand voice</h3>
+        <p className={styles.voiceIntro}>
+          Use clear, plain language because WDL makes workflows clear to the
+          people who read and write them. Lead with the point, choose familiar
+          words, use active verbs, and state conditions where they apply.
+        </p>
+        <div className={styles.examples}>
+          <figure className={styles.example}>
+            <figcaption>Good</figcaption>
+            <blockquote>
+              Run the workflow again after you update the input file.
+            </blockquote>
+          </figure>
+          <figure className={styles.example}>
+            <figcaption>Bad</figcaption>
+            <blockquote>
+              Workflow execution may be reinitiated subsequent to input file
+              modification.
+            </blockquote>
+          </figure>
+        </div>
       </div>
     </section>
   );

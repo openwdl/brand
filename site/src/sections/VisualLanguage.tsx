@@ -10,13 +10,13 @@ export function VisualLanguage() {
       <ChapterHeader
         number="04"
         label="Color and typography"
-        title="One primary palette. Two typefaces."
+        title="Use one palette and two typefaces."
       >
         <p>
-          Teal identifies OpenWDL and marks emphasis. Cool Gray supplies
-          backgrounds, borders, neutral text, and interface structure. Public
-          Sans carries headings and prose; Martian Mono carries code, compact
-          labels, captions, and technical accents.
+          Use Teal to identify OpenWDL and show emphasis. Use Cool Gray for
+          backgrounds, borders, neutral text, and interface structure. Use Public
+          Sans for headings and prose. Use Martian Mono for code, compact labels,
+          captions, and technical accents.
         </p>
       </ChapterHeader>
       <div className={styles.content}>

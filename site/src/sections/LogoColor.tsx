@@ -22,13 +22,13 @@ export function LogoColor(): JSX.Element {
       <ChapterHeader
         number="03"
         label="Using the mark"
-        title="Choose an approved treatment for the background."
+        title="Choose a logo that contrasts with its background."
       >
         <p>
-          Use teal-and-white or teal-and-black when color is available. Use the
-          single-color treatments for monochrome production or when the
-          surrounding palette cannot support teal. Do not recolor, distort,
-          rearrange, or redraw the artwork.
+          Use teal and white or teal and black when color is available. Use a
+          single-color logo for monochrome production or when teal does not work
+          with the surrounding colors. Do not recolor, distort, rearrange, or
+          redraw the artwork.
         </p>
       </ChapterHeader>
 
@@ -54,10 +54,10 @@ export function LogoColor(): JSX.Element {
       </div>
 
       <div className={styles.tester}>
-        <h3>Check a real surface</h3>
+        <h3>Check the logo on its final background</h3>
         <p>
-          Pick any background or use a common preset. The preview recommends
-          the approved treatment with the clearest wordmark contrast.
+          Choose a background or start with a common preset. The preview selects
+          the approved logo with the clearest wordmark contrast.
         </p>
         <LogoPreview />
       </div>
