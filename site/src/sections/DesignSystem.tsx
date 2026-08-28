@@ -12,7 +12,7 @@ import {
   Link,
   useToast,
 } from "@openwdl/ui";
-import { FiExternalLink } from "react-icons/fi";
+import { FiCopy, FiExternalLink } from "react-icons/fi";
 import { ChapterHeader } from "../components/ChapterHeader";
 import styles from "./DesignSystem.module.css";
 
@@ -43,7 +43,7 @@ export function DesignSystem() {
             <ButtonGroup aria-label="Example actions">
               <Button size="sm">Primary action</Button>
               <Button size="sm" variant="secondary">Secondary</Button>
-              <IconButton label="Copy example" size="sm">⧉</IconButton>
+              <IconButton label="Copy example" size="sm"><FiCopy /></IconButton>
             </ButtonGroup>
             <Link href="#downloads">Text link</Link>
           </Card>

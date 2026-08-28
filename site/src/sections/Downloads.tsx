@@ -36,6 +36,7 @@ function basename(url: string): string {
 export function Downloads(): JSX.Element {
   // `busy` prevents double-clicks while a zip is being assembled.
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
 
   /**
    * Handles the "Download all (zip)" button click.
@@ -44,6 +45,7 @@ export function Downloads(): JSX.Element {
    */
   async function downloadAll() {
     setBusy(true);
+    setError("");
     try {
       // Flatten all assets: each logo contributes both an SVG and a PNG entry.
       const all = logoAssets.flatMap((a) => [
@@ -63,6 +65,8 @@ export function Downloads(): JSX.Element {
       document.body.removeChild(link);
       // Revoke immediately afterwards to avoid leaking memory.
       URL.revokeObjectURL(href);
+    } catch {
+      setError("The asset package could not be prepared. Try the individual files below.");
     } finally {
       setBusy(false);
     }
@@ -87,11 +91,19 @@ export function Downloads(): JSX.Element {
           <span>
             {logoAssets.length} asset sets · {logoAssets.length * 2} individual files
           </span>
-          <button type="button" className={styles.all} onClick={downloadAll} disabled={busy}>
+          <button
+            type="button"
+            className={styles.all}
+            onClick={downloadAll}
+            disabled={busy}
+            aria-busy={busy}
+          >
             <FiDownload aria-hidden="true" />
             {busy ? "Preparing…" : "Download all assets (.zip)"}
           </button>
         </div>
+
+        {error && <p className={styles.error} role="alert">{error}</p>}
 
         <div className={styles.grid}>
           {logoAssets.map((a) => {

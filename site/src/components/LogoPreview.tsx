@@ -39,12 +39,15 @@ export function LogoPreview(): JSX.Element {
         {/* Color picker label, aria-label matches the test query "Background color". */}
         <label className={styles.label}>
           Background color
-          <input
-            type="color"
-            aria-label="Background color"
-            value={bg}
-            onChange={(e) => setBg(e.target.value)}
-          />
+          <span className={styles.pickerRow}>
+            <input
+              type="color"
+              aria-label="Background color"
+              value={bg}
+              onChange={(e) => setBg(e.target.value)}
+            />
+            <output className={styles.value}>{bg}</output>
+          </span>
         </label>
 
         {/* Preset buttons for the two most common brand contexts. */}
@@ -54,8 +57,9 @@ export function LogoPreview(): JSX.Element {
         </div>
 
         {/* data-testid="recommended" is queried by the test to assert the variant name. */}
-        <p>
-          Recommended variant: <strong data-testid="recommended">{recommended}</strong>
+        <p className={styles.recommendation} aria-live="polite">
+          Recommended variant
+          <strong data-testid="recommended">{recommended}</strong>
         </p>
 
         {/* Download the currently recommended variant's SVG. */}

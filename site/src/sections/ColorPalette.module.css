@@ -13,3 +13,10 @@
   .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .subhead { align-items: start; flex-direction: column; }
 }
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
